@@ -5,7 +5,7 @@
   align-items: center;
   justify-content: center;
   min-height: 100vh;
-  background: linear-gradient(135deg, #e0f7fa, #e3f2fd); /* Fondo celeste muy claro */
+  background: linear-gradient(135deg, #2c3e50, #34495e); /* Fondo más sofisticado */
   padding: 2rem;
   font-family: 'Poppins', sans-serif;
 }
@@ -21,13 +21,13 @@
   padding: 2rem;
   background-color: #ffffff;
   border-radius: 20px;
-  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2); /* Sombra más pronunciada */
 }
 
 /* Títulos y subtítulos */
 .titulo {
   font-size: 2.5rem;
-  color: #1976d2; /* Azul delicado */
+  color: #16a085; /* Verde elegante */
   margin-bottom: 0.5rem;
   text-align: center;
 }
@@ -51,9 +51,9 @@
 }
 
 .campo:focus {
-  border-color: #90caf9; /* Celeste suave */
+  border-color: #1abc9c; /* Verde elegante */
   outline: none;
-  box-shadow: 0 0 8px rgba(144, 202, 249, 0.3);
+  box-shadow: 0 0 8px rgba(26, 188, 156, 0.3);
 }
 
 /* Fechas */
@@ -69,25 +69,25 @@
   padding: 1rem;
   font-size: 1rem;
   color: white;
-  background-color: #64b5f6; /* Azul claro */
+  background-color: #1abc9c; /* Verde llamativo */
   border: none;
   border-radius: 25px;
   cursor: pointer;
   transition: background-color 0.3s ease, transform 0.2s ease;
-  box-shadow: 0 4px 10px rgba(100, 181, 246, 0.4);
+  box-shadow: 0 4px 10px rgba(26, 188, 156, 0.4);
 }
 
 .boton:hover {
-  background-color: #42a5f5; /* Azul un poco más intenso */
+  background-color: #16a085; /* Verde más oscuro */
   transform: scale(1.05);
 }
 
 .boton-regresar {
-  background-color: #ef5350; /* Rojo suave */
+  background-color: #e74c3c; /* Rojo sofisticado */
 }
 
 .boton-regresar:hover {
-  background-color: #e53935;
+  background-color: #c0392b;
 }
 
 /* Responsividad */

@@ -15,18 +15,18 @@ body {
   margin: 0;
   padding: 0;
   font-family: 'Poppins', sans-serif;
-  background-color: #f0f8ff; /* Fondo azul muy claro */
-  color: #333;
+  background-color: #f4f4f9; /* Fondo más sofisticado */
+  color: #222;
 }
 
 header {
-  background: linear-gradient(90deg, #4fc3f7, #2196f3); /* Gradiente celeste y azul */
+  background: linear-gradient(90deg, #2c3e50, #34495e); /* Gradiente más elegante */
   color: white;
   padding: 10px 20px;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2);
 }
 
 .navbar {
@@ -51,7 +51,7 @@ header {
 }
 
 .navbar ul li a {
-  color: white;
+  color: #ecf0f1;
   text-decoration: none;
   font-size: 16px;
   font-weight: bold;
@@ -59,24 +59,24 @@ header {
 }
 
 .navbar ul li a:hover {
-  color: #bbdefb; /* Celeste claro */
+  color: #1abc9c; /* Verde elegante */
   transform: scale(1.05);
 }
 
 .cta {
-  background-color: #2196f3; /* Azul fuerte */
+  background-color: #1abc9c; /* Verde llamativo */
   color: white;
   border: none;
   padding: 10px 20px;
   cursor: pointer;
   font-size: 16px;
   border-radius: 25px;
-  box-shadow: 0px 4px 10px rgba(33, 150, 243, 0.4);
+  box-shadow: 0px 4px 10px rgba(26, 188, 156, 0.5);
   transition: background-color 0.3s ease, transform 0.2s ease;
 }
 
 .cta:hover {
-  background-color: #1565c0; /* Azul más oscuro */
+  background-color: #16a085; /* Verde más oscuro */
   transform: scale(1.1);
 }
 
@@ -92,7 +92,7 @@ header {
 
 .hero h1 {
   font-size: 2.5rem;
-  color: #1565c0; /* Azul oscuro */
+  color: #16a085; /* Verde oscuro elegante */
   margin-bottom: 20px;
 }
 
@@ -105,9 +105,9 @@ header {
 footer {
   text-align: center;
   padding: 10px 0;
-  background: linear-gradient(90deg, #4fc3f7, #2196f3); /* Gradiente igual al header */
+  background: linear-gradient(90deg, #2c3e50, #34495e); /* Gradiente igual al header */
   color: white;
   margin-top: 30px;
   font-size: 14px;
-  box-shadow: 0px -4px 6px rgba(0, 0, 0, 0.1);
+  box-shadow: 0px -4px 6px rgba(0, 0, 0, 0.2);
 }

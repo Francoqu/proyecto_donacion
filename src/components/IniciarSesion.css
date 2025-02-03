@@ -1,121 +1,120 @@
 /* Contenedor principal */
 .iniciar-container {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    min-height: 100vh;
-    background: linear-gradient(135deg, #e0f7fa, #e3f2fd); /* Fondo celeste muy claro */
-    font-family: 'Poppins', sans-serif;
-    padding: 2rem;
-  }
-  
-  /* Tarjeta */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  background: linear-gradient(135deg, #2c3e50, #34495e); /* Fondo más elegante */
+  font-family: 'Poppins', sans-serif;
+  padding: 2rem;
+}
+
+/* Tarjeta */
+.iniciar-form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.5rem;
+  max-width: 400px;
+  width: 100%;
+  padding: 2rem;
+  background-color: #ffffff; /* Fondo blanco */
+  border-radius: 20px; /* Bordes redondeados */
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2); /* Sombra más pronunciada */
+  text-align: center;
+}
+
+/* Título */
+.iniciar-title {
+  font-size: 2.5rem;
+  color: #16a085; /* Verde elegante */
+  margin-bottom: 1rem;
+  font-weight: bold;
+}
+
+/* Descripción */
+.iniciar-description {
+  font-size: 1.2rem;
+  color: #555;
+  margin-bottom: 1.5rem;
+  line-height: 1.5;
+}
+
+/* Campos del formulario */
+.iniciar-input {
+  width: 100%;
+  padding: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  font-size: 1rem;
+  box-sizing: border-box;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.iniciar-input:focus {
+  border-color: #1abc9c; /* Verde */
+  outline: none;
+  box-shadow: 0 0 8px rgba(26, 188, 156, 0.3);
+}
+
+/* Botón */
+.iniciar-button {
+  width: 100%;
+  padding: 1rem;
+  font-size: 1.1rem;
+  font-weight: bold;
+  color: white;
+  background-color: #1abc9c; /* Verde llamativo */
+  border: none;
+  border-radius: 25px; /* Bordes redondeados */
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease;
+  box-shadow: 0 4px 10px rgba(26, 188, 156, 0.4);
+}
+
+.iniciar-button:hover {
+  background-color: #16a085; /* Verde más oscuro */
+  transform: scale(1.05);
+  box-shadow: 0 6px 15px rgba(22, 160, 133, 0.5);
+}
+
+/* Enlace de registro */
+.iniciar-register-text {
+  font-size: 0.9rem;
+  color: #555;
+}
+
+.iniciar-register-link {
+  color: #1abc9c; /* Verde claro */
+  text-decoration: none;
+  font-weight: bold;
+  transition: color 0.3s ease;
+}
+
+.iniciar-register-link:hover {
+  color: #16a085; /* Verde más oscuro */
+  text-decoration: underline;
+}
+
+/* Responsividad */
+@media (max-width: 768px) {
   .iniciar-form {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 1.5rem;
-    max-width: 400px;
-    width: 100%;
-    padding: 2rem;
-    background-color: #ffffff; /* Fondo blanco */
-    border-radius: 20px; /* Bordes redondeados */
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1); /* Sombra suave */
-    text-align: center;
-  }
-  
-  /* Título */
-  .iniciar-title {
-    font-size: 2.5rem;
-    color: #1976d2; /* Azul delicado */
-    margin-bottom: 1rem;
-    font-weight: bold;
-  }
-  
-  /* Descripción */
-  .iniciar-description {
-    font-size: 1.2rem;
-    color: #555;
-    margin-bottom: 1.5rem;
-    line-height: 1.5;
-  }
-  
-  /* Campos del formulario */
-  .iniciar-input {
-    width: 100%;
-    padding: 1rem;
-    border: 1px solid #ccc;
-    border-radius: 10px;
-    font-size: 1rem;
-    box-sizing: border-box;
-    transition: border-color 0.3s ease, box-shadow 0.3s ease;
-  }
-  
-  .iniciar-input:focus {
-    border-color: #90caf9; /* Azul celeste */
-    outline: none;
-    box-shadow: 0 0 8px rgba(144, 202, 249, 0.3);
-  }
-  
-  /* Botón */
-  .iniciar-button {
-    width: 100%;
-    padding: 1rem;
-    font-size: 1.1rem;
-    font-weight: bold;
-    color: white;
-    background-color: #64b5f6; /* Azul claro */
-    border: none;
-    border-radius: 25px; /* Bordes redondeados */
-    cursor: pointer;
-    transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease;
-    box-shadow: 0 4px 10px rgba(100, 181, 246, 0.4);
-  }
-  
-  .iniciar-button:hover {
-    background-color: #42a5f5; /* Azul más intenso */
-    transform: scale(1.05);
-    box-shadow: 0 6px 15px rgba(66, 165, 245, 0.5);
-  }
-  
-  /* Enlace de registro */
-  .iniciar-register-text {
-    font-size: 0.9rem;
-    color: #555;
-  }
-  
-  .iniciar-register-link {
-    color: #64b5f6; /* Azul claro */
-    text-decoration: none;
-    font-weight: bold;
-    transition: color 0.3s ease;
-  }
-  
-  .iniciar-register-link:hover {
-    color: #42a5f5; /* Azul más intenso */
-    text-decoration: underline;
-  }
-  
-  /* Responsividad */
-  @media (max-width: 768px) {
-    .iniciar-form {
       padding: 1.5rem;
-    }
-  
-    .iniciar-title {
-      font-size: 2rem;
-    }
-  
-    .iniciar-description {
-      font-size: 1rem;
-    }
-  
-    .iniciar-input {
-      font-size: 0.9rem;
-    }
-  
-    .iniciar-button {
-      font-size: 1rem;
-    }
   }
-  
+
+  .iniciar-title {
+      font-size: 2rem;
+  }
+
+  .iniciar-description {
+      font-size: 1rem;
+  }
+
+  .iniciar-input {
+      font-size: 0.9rem;
+  }
+
+  .iniciar-button {
+      font-size: 1rem;
+  }
+}

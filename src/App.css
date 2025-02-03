@@ -2,8 +2,8 @@
 body {
   margin: 0;
   font-family: 'Arial', sans-serif;
-  background-color: #f8f9fa;
-  color: #333;
+  background-color: #f4f4f9;
+  color: #222;
 }
 
 /* Barra de navegación */
@@ -11,9 +11,9 @@ body {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background: linear-gradient(90deg, #f6d5f7, #e9f7fc);
+  background: linear-gradient(90deg, #2c3e50, #34495e);
   padding: 1rem 2rem;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
 }
 
 .logo-img {
@@ -33,14 +33,14 @@ body {
 
 .nav-links a {
   text-decoration: none;
-  color: #333;
+  color: #ecf0f1;
   font-size: 1rem;
   font-weight: bold;
   transition: color 0.3s ease;
 }
 
 .nav-links a:hover {
-  color: #845ec2;
+  color: #1abc9c;
 }
 
 .icon {
@@ -49,20 +49,21 @@ body {
   margin-right: 0.5rem;
 }
 
+/* Botón de llamada a la acción */
 .cta {
-  background-color: #ffd7e0;
-  color: #333;
+  background-color: #1abc9c;
+  color: #fff;
   border: none;
   padding: 0.8rem 1.5rem;
   border-radius: 25px;
   font-size: 1rem;
   font-weight: bold;
-  box-shadow: 0 4px 10px rgba(255, 215, 224, 0.5);
+  box-shadow: 0 4px 10px rgba(26, 188, 156, 0.5);
   transition: background-color 0.3s ease, transform 0.2s ease;
 }
 
 .cta:hover {
-  background-color: #ffb1c1;
+  background-color: #16a085;
   transform: scale(1.05);
 }
 
@@ -74,9 +75,9 @@ body {
 
 /* Pie de página */
 .footer {
-  background-color: #e3fdfd;
-  color: #666;
+  background-color: #2c3e50;
+  color: #ecf0f1;
   text-align: center;
   padding: 1rem;
-  box-shadow: 0 -4px 10px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 -4px 10px rgba(0, 0, 0, 0.2);
 }

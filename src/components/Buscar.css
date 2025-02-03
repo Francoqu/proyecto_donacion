@@ -1,38 +1,40 @@
 .buscar-container {
-    text-align: center;
-    padding: 2rem;
-    background-color: #e3f2fd; /* Azul claro */
-    border-radius: 10px;
-    max-width: 800px;
-    margin: 2rem auto;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-  }
-  
-  .buscar-title {
-    font-size: 2rem;
-    color: #1565c0; /* Azul oscuro */
-  }
-  
-  .buscar-description {
-    color: #555;
-    margin-bottom: 1.5rem;
-  }
-  
-  .buscar-list {
-    list-style: none;
-    padding: 0;
-  }
-  
-  .buscar-item {
-    background-color: #ffffff; /* Blanco */
-    margin: 0.5rem 0;
-    padding: 1rem;
-    border-radius: 5px;
-    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
-    transition: transform 0.2s ease;
-  }
-  
-  .buscar-item:hover {
-    transform: scale(1.05);
-  }
-  
+  text-align: center;
+  padding: 2rem;
+  background-color: #1e1e2f; /* Azul oscuro sofisticado */
+  border-radius: 12px;
+  max-width: 800px;
+  margin: 2rem auto;
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+}
+
+.buscar-title {
+  font-size: 2rem;
+  color: #f8f9fa; /* Blanco suave */
+  font-weight: bold;
+}
+
+.buscar-description {
+  color: #b0b3c4; /* Gris elegante */
+  margin-bottom: 1.5rem;
+}
+
+.buscar-list {
+  list-style: none;
+  padding: 0;
+}
+
+.buscar-item {
+  background-color: #2a2a3a; /* Gris oscuro moderno */
+  margin: 0.5rem 0;
+  padding: 1rem;
+  border-radius: 8px;
+  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.2);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  color: #f8f9fa; /* Texto en blanco */
+}
+
+.buscar-item:hover {
+  transform: scale(1.05);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+}

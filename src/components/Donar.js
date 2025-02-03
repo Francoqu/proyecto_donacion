@@ -39,6 +39,12 @@ const Donar = () => {
           Donar
         </button>
       </form>
+
+      {/* Botón de Educación con imagen */}
+      <button className="donar-button">
+        <img src="/educacion.jpg" alt="Educación" className="donar-img" />
+        Donar a Educación
+      </button>
     </div>
   );
 };
