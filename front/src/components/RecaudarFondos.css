@@ -1,106 +1,98 @@
 /* Contenedor principal */
 .contenedor {
   display: flex;
-  flex-direction: column;
-  align-items: center;
   justify-content: center;
-  min-height: 100vh;
-  background: linear-gradient(135deg, #2c3e50, #34495e); /* Fondo más sofisticado */
-  padding: 2rem;
-  font-family: 'Poppins', sans-serif;
+  align-items: center;
+  height: 80vh;
+  background: #f9f9f9;
 }
 
 /* Formulario */
 .formulario {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 1.5rem;
-  max-width: 500px;
-  width: 100%;
-  padding: 2rem;
-  background-color: #ffffff;
-  border-radius: 20px;
-  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2); /* Sombra más pronunciada */
-}
-
-/* Títulos y subtítulos */
-.titulo {
-  font-size: 2.5rem;
-  color: #16a085; /* Verde elegante */
-  margin-bottom: 0.5rem;
+  background: white;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
   text-align: center;
+  max-width: 400px;
+  width: 100%;
 }
 
+/* Título */
+.titulo {
+  font-size: 1.8rem;
+  color: #2c3e50;
+  margin-bottom: 10px;
+}
+
+/* Subtítulo */
 .subtitulo {
   font-size: 1.2rem;
   color: #555;
-  margin-bottom: 1.5rem;
-  text-align: center;
+  margin-bottom: 15px;
 }
 
 /* Campos del formulario */
 .campo {
   width: 100%;
-  padding: 1rem;
+  padding: 10px;
+  margin: 10px 0;
+  border-radius: 5px;
   border: 1px solid #ccc;
-  border-radius: 10px;
   font-size: 1rem;
-  box-sizing: border-box;
-  transition: border-color 0.3s ease, box-shadow 0.3s ease;
-}
-
-.campo:focus {
-  border-color: #1abc9c; /* Verde elegante */
-  outline: none;
-  box-shadow: 0 0 8px rgba(26, 188, 156, 0.3);
 }
 
 /* Fechas */
 .fechas {
   display: flex;
-  gap: 1rem;
-  width: 100%;
+  justify-content: space-between;
+}
+
+.fechas .campo {
+  width: 48%;
 }
 
 /* Botones */
 .boton {
+  padding: 10px;
   width: 100%;
-  padding: 1rem;
+  margin-top: 10px;
   font-size: 1rem;
-  color: white;
-  background-color: #1abc9c; /* Verde llamativo */
   border: none;
-  border-radius: 25px;
+  border-radius: 5px;
   cursor: pointer;
-  transition: background-color 0.3s ease, transform 0.2s ease;
-  box-shadow: 0 4px 10px rgba(26, 188, 156, 0.4);
+  background-color: #3498db;
+  color: white;
+  transition: 0.3s;
 }
 
 .boton:hover {
-  background-color: #16a085; /* Verde más oscuro */
-  transform: scale(1.05);
+  background-color: #2980b9;
 }
 
+/* Botón de regresar */
 .boton-regresar {
-  background-color: #e74c3c; /* Rojo sofisticado */
+  background-color: #e74c3c;
 }
 
 .boton-regresar:hover {
   background-color: #c0392b;
 }
 
+/* Mensaje de éxito */
+.mensaje {
+  font-size: 1rem;
+  color: green;
+  font-weight: bold;
+  margin-top: 10px;
+}
+
 /* Responsividad */
-@media (max-width: 768px) {
-  .formulario {
-    padding: 1.5rem;
+@media (max-width: 600px) {
+  .fechas {
+      flex-direction: column;
   }
-
-  .campo {
-    font-size: 0.9rem;
-  }
-
-  .titulo {
-    font-size: 2rem;
+  .fechas .campo {
+      width: 100%;
   }
 }
