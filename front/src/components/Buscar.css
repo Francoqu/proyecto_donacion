@@ -1,0 +1,133 @@
+/* Contenedor principal */
+.buscar-container {
+  max-width: 900px;
+  margin: 40px auto;
+  padding: 20px;
+  background: #f9f9f9;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  text-align: center;
+}
+
+/* Título y descripción */
+.buscar-title {
+  font-size: 2rem;
+  color: #2c3e50;
+  margin-bottom: 10px;
+}
+
+.buscar-description {
+  font-size: 1.2rem;
+  color: #555;
+}
+
+/* Barra de búsqueda */
+.buscar-input {
+  width: 80%;
+  padding: 10px;
+  margin: 15px 0;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  font-size: 1rem;
+}
+
+/* Filtros de categorías */
+.categoria-filtros {
+  margin: 10px 0;
+}
+
+.categoria-filtros button {
+  padding: 8px 15px;
+  margin: 5px;
+  border: none;
+  cursor: pointer;
+  background-color: #ddd;
+  border-radius: 5px;
+  transition: 0.3s;
+}
+
+.categoria-filtros button.active,
+.categoria-filtros button:hover {
+  background-color: #3498db;
+  color: white;
+}
+
+/* Lista de campañas */
+.campañas-list {
+  margin-top: 20px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px;
+  justify-content: center;
+}
+
+/* Tarjetas de campañas */
+.campaña-card {
+  background: white;
+  padding: 15px;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  width: 280px;
+  text-align: left;
+  transition: transform 0.2s ease-in-out;
+}
+
+.campaña-card:hover {
+  transform: scale(1.05);
+}
+
+.campaña-card h3 {
+  color: #3498db;
+  font-size: 1.3rem;
+}
+
+.campaña-card p {
+  font-size: 1rem;
+  color: #444;
+  margin: 5px 0;
+}
+
+/* Categoría de la campaña */
+.campaña-categoria {
+  display: inline-block;
+  padding: 5px 10px;
+  margin-top: 8px;
+  font-size: 0.9rem;
+  color: white;
+  border-radius: 5px;
+}
+
+.campaña-categoria:contains("Educación") {
+  background: #f39c12;
+}
+
+.campaña-categoria:contains("Salud") {
+  background: #e74c3c;
+}
+
+.campaña-categoria:contains("Medio Ambiente") {
+  background: #27ae60;
+}
+
+/* Mensaje si no hay campañas */
+.no-campañas {
+  font-size: 1.2rem;
+  color: #888;
+  font-weight: bold;
+  margin-top: 20px;
+}
+
+/* Pie de página */
+.buscar-footer {
+  margin-top: 30px;
+  font-size: 1rem;
+  color: #777;
+}
+
+/* Responsividad */
+@media (max-width: 600px) {
+  .campañas-list {
+      flex-direction: column;
+      align-items: center;
+  }
+}
