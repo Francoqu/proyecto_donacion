@@ -14,19 +14,43 @@ const App = () => {
       <header className="navbar">
         <nav>
           <ul className="nav-links">
-            <li><Link to="/">Inicio</Link></li>
-            <li><Link to="/buscar">Buscar</Link></li>
-            <li><Link to="/donar">Donar</Link></li>
-            <li><Link to="/recaudar-fondos">Recaudar fondos</Link></li>
-            <li><Link to="/acerca-de">Acerca de</Link></li>
-            <li><Link to="/iniciar-sesion">Iniciar sesión</Link></li>
+            <li>
+              <Link to="/">
+                <img src="/iniciosesion.jpg" alt="Inicio" className="nav-logo" /> Inicio
+              </Link>
+            </li>
+            <li>
+              <Link to="/buscar">
+                <img src="/busqueda.png" alt="Buscar" className="nav-logo" /> Buscar
+              </Link>
+            </li>
+            <li>
+              <Link to="/donar">
+                <img src="/donar.png" alt="Donar" className="nav-logo" /> Donar
+              </Link>
+            </li>
+            <li>
+              <Link to="/recaudar-fondos">
+                <img src="/recaudar.png" alt="Recaudar fondos" className="nav-logo" /> Recaudar fondos
+              </Link>
+            </li>
+            <li>
+              <Link to="/acerca-de">
+                <img src="/acerca.png" alt="Acerca de" className="nav-logo" /> Acerca de
+              </Link>
+            </li>
+            <li>
+              <Link to="/iniciar-sesion">
+                <img src="/iniciar.png" alt="Iniciar sesión" className="nav-logo" /> Iniciar sesión
+              </Link>
+            </li>
           </ul>
         </nav>
       </header>
 
       <main className="main-content">
         <Routes>
-          <Route path="/" element={<Presentacion />} /> {/* ✅ Nueva Página de Presentación */}
+          <Route path="/" element={<Presentacion />} />
           <Route path="/buscar" element={<Buscar />} />
           <Route path="/donar" element={<Donar />} />
           <Route path="/recaudar-fondos" element={<RecaudarFondos />} />
@@ -35,7 +59,6 @@ const App = () => {
         </Routes>
       </main>
 
-      {/* ✅ Mostrar el footer solo si NO estamos en la página de presentación */}
       <Footer />
     </Router>
   );
@@ -44,7 +67,7 @@ const App = () => {
 const Footer = () => {
   const location = useLocation();
   if (location.pathname === "/") {
-    return null; // Oculta el footer en la página de presentación
+    return null;
   }
 
   return (

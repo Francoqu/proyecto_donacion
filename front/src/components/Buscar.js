@@ -12,14 +12,24 @@ const Buscar = () => {
     }, []);
 
     const fetchCampaigns = async () => {
-        const data = await getCampaigns();
-        setCampañas(data);
+        try {
+            const data = await getCampaigns();
+            if (Array.isArray(data)) {
+                setCampañas(data);
+            } else {
+                console.error("Error: 'getCampaigns()' no devolvió un array válido.");
+                setCampañas([]); // Evita que sea undefined
+            }
+        } catch (error) {
+            console.error("Error al obtener las campañas:", error);
+            setCampañas([]); // Evita que sea undefined en caso de error
+        }
     };
 
     // Filtrar por nombre o categoría
-    const campañasFiltradas = campañas.filter(campaña =>
-        campaña.nombre.toLowerCase().includes(busqueda.toLowerCase()) &&
-        (filtroCategoria === '' || campaña.categoria === filtroCategoria)
+    const campañasFiltradas = (Array.isArray(campañas) ? campañas : []).filter(campaña =>
+        campaña?.nombre?.toLowerCase().includes(busqueda.toLowerCase()) &&
+        (filtroCategoria === '' || campaña?.categoria === filtroCategoria)
     );
 
     return (
@@ -50,10 +60,10 @@ const Buscar = () => {
             <div className="campañas-list">
                 {campañasFiltradas.length > 0 ? (
                     campañasFiltradas.map((campaña) => (
-                        <div key={campaña.id} className="campaña-card">
-                            <h3>{campaña.nombre}</h3>
-                            <p>{campaña.descripcion}</p>
-                            <span className="campaña-categoria">{campaña.categoria}</span>
+                        <div key={campaña?.id || Math.random()} className="campaña-card">
+                            <h3>{campaña?.nombre || "Sin nombre"}</h3>
+                            <p>{campaña?.descripcion || "Sin descripción disponible"}</p>
+                            <span className="campaña-categoria">{campaña?.categoria || "Sin categoría"}</span>
                         </div>
                     ))
                 ) : (
@@ -62,7 +72,7 @@ const Buscar = () => {
             </div>
 
             {/* Pie de página */}
-            <footer className="buscar-footer">2024</footer>
+            <footer className="buscar-footer">2025</footer>
         </div>
     );
 };

@@ -9,21 +9,19 @@ body {
 /* Barra de navegación */
 .navbar {
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
   align-items: center;
   background: linear-gradient(90deg, #2c3e50, #34495e);
   padding: 1rem 2rem;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
 }
 
-.logo-img {
-  height: 50px;
-}
-
+/* Navegación */
 .nav-links {
   display: flex;
   list-style: none;
-  gap: 2rem;
+  gap: 1.5rem;
+  padding: 0;
 }
 
 .nav-links li {
@@ -32,21 +30,32 @@ body {
 }
 
 .nav-links a {
+  display: flex;
+  align-items: center;
   text-decoration: none;
   color: #ecf0f1;
   font-size: 1rem;
   font-weight: bold;
   transition: color 0.3s ease;
+  padding: 0.5rem;
+  gap: 8px;
 }
 
 .nav-links a:hover {
   color: #1abc9c;
 }
 
-.icon {
-  width: 20px;
-  height: 20px;
-  margin-right: 0.5rem;
+/* Estilos para los logos en la barra de navegación */
+.nav-logo {
+  width: 40px; /* Ajustado a tamaño de logo */
+  height: 40px;
+  object-fit: contain;
+  border-radius: 50%;
+  transition: transform 0.3s ease-in-out;
+}
+
+.nav-logo:hover {
+  transform: scale(1.1);
 }
 
 /* Botón de llamada a la acción */
