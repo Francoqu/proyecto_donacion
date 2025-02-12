@@ -1,7 +1,7 @@
 /* Fondo global */
 body {
   margin: 0;
-  font-family: 'Arial', sans-serif;
+  font-family: 'Playfair Display', serif;
   background-color: #f4f4f9;
   color: #222;
 }
@@ -47,7 +47,7 @@ body {
 
 /* Estilos para los logos en la barra de navegación */
 .nav-logo {
-  width: 40px; /* Ajustado a tamaño de logo */
+  width: 40px;
   height: 40px;
   object-fit: contain;
   border-radius: 50%;
@@ -56,6 +56,18 @@ body {
 
 .nav-logo:hover {
   transform: scale(1.1);
+}
+
+/* Logo principal como fondo */
+.logo {
+  width: 80px; /* Ajusta según el tamaño deseado */
+  height: 80px;
+  background-image: url('/loja.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  border-radius: 50%; /* Hace que el logo sea circular */
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2); /* Sombra para resaltar */
 }
 
 /* Botón de llamada a la acción */
@@ -84,7 +96,7 @@ body {
 
 /* Pie de página */
 .footer {
-  background-color: #2c3e50;
+  background-color: #999b9c;
   color: #ecf0f1;
   text-align: center;
   padding: 1rem;

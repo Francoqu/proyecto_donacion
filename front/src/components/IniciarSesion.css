@@ -1,15 +1,22 @@
+/* Fuente global */
+body {
+  margin: 0;
+  font-family: 'Playfair Display', serif;
+  background-color: #f4f4f9;
+  color: #222;
+}
+
 /* Contenedor principal */
 .iniciar-container {
   display: flex;
   align-items: center;
   justify-content: center;
   min-height: 100vh;
-  background: linear-gradient(135deg, #2c3e50, #34495e); /* Fondo más elegante */
-  font-family: 'Poppins', sans-serif;
+  backdrop-filter: blur(10px); /* Difuminado elegante */
   padding: 2rem;
 }
 
-/* Tarjeta */
+/* Tarjeta de inicio de sesión */
 .iniciar-form {
   display: flex;
   flex-direction: column;
@@ -18,81 +25,90 @@
   max-width: 400px;
   width: 100%;
   padding: 2rem;
-  background-color: #ffffff; /* Fondo blanco */
+  background: rgba(255, 255, 255, 0.2); /* Fondo semi-transparente */
   border-radius: 20px; /* Bordes redondeados */
-  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2); /* Sombra más pronunciada */
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
   text-align: center;
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.3);
 }
 
 /* Título */
 .iniciar-title {
   font-size: 2.5rem;
-  color: #16a085; /* Verde elegante */
+  color: #000000;
   margin-bottom: 1rem;
   font-weight: bold;
+  text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.5);
 }
 
 /* Descripción */
 .iniciar-description {
   font-size: 1.2rem;
-  color: #555;
+  color: #000000;
   margin-bottom: 1.5rem;
   line-height: 1.5;
+  text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.3);
 }
 
 /* Campos del formulario */
 .iniciar-input {
   width: 100%;
   padding: 1rem;
-  border: 1px solid #ccc;
+  border: 1px solid rgba(255, 255, 255, 0.5);
   border-radius: 10px;
   font-size: 1rem;
-  box-sizing: border-box;
-  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+  background-color: rgba(255, 255, 255, 0.3);
+  color: white;
+  outline: none;
+  transition: all 0.3s ease-in-out;
+}
+
+.iniciar-input::placeholder {
+  color: rgba(0, 0, 0, 0.7);
 }
 
 .iniciar-input:focus {
-  border-color: #1abc9c; /* Verde */
-  outline: none;
-  box-shadow: 0 0 8px rgba(26, 188, 156, 0.3);
+  background-color: rgba(255, 255, 255, 0.5);
+  border: 1px solid #3498db;
 }
 
-/* Botón */
+/* Botón de inicio de sesión */
 .iniciar-button {
   width: 100%;
   padding: 1rem;
   font-size: 1.1rem;
   font-weight: bold;
   color: white;
-  background-color: #1abc9c; /* Verde llamativo */
+  background: linear-gradient(135deg, #146ea2, #1abc9c);
   border: none;
-  border-radius: 25px; /* Bordes redondeados */
+  border-radius: 25px;
   cursor: pointer;
-  transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease;
-  box-shadow: 0 4px 10px rgba(26, 188, 156, 0.4);
+  transition: all 0.3s ease-in-out;
+  box-shadow: 0 4px 10px rgba(72, 73, 73, 0.4);
 }
 
 .iniciar-button:hover {
-  background-color: #16a085; /* Verde más oscuro */
+  background: linear-gradient(135deg, #f04542, #d73c2c);
   transform: scale(1.05);
-  box-shadow: 0 6px 15px rgba(22, 160, 133, 0.5);
+  box-shadow: 0 6px 15px rgba(38, 48, 46, 0.5);
 }
 
 /* Enlace de registro */
 .iniciar-register-text {
   font-size: 0.9rem;
-  color: #555;
+  color: white;
 }
 
 .iniciar-register-link {
-  color: #1abc9c; /* Verde claro */
+  color: #1abc9c;
   text-decoration: none;
   font-weight: bold;
   transition: color 0.3s ease;
 }
 
 .iniciar-register-link:hover {
-  color: #16a085; /* Verde más oscuro */
+  color: #16a085;
   text-decoration: underline;
 }
 

@@ -11,61 +11,58 @@ import './App.css'; // Archivo CSS para el diseño
 const App = () => {
   return (
     <Router>
-      <header className="navbar">
-        <nav>
-          <ul className="nav-links">
-            <li>
-              <Link to="/">
-                <img src="/iniciosesion.jpg" alt="Inicio" className="nav-logo" /> Inicio
-              </Link>
-            </li>
-            <li>
-              <Link to="/buscar">
-                <img src="/busqueda.png" alt="Buscar" className="nav-logo" /> Buscar
-              </Link>
-            </li>
-            <li>
-              <Link to="/donar">
-                <img src="/donar.png" alt="Donar" className="nav-logo" /> Donar
-              </Link>
-            </li>
-            <li>
-              <Link to="/recaudar-fondos">
-                <img src="/recaudar.png" alt="Recaudar fondos" className="nav-logo" /> Recaudar fondos
-              </Link>
-            </li>
-            <li>
-              <Link to="/acerca-de">
-                <img src="/acerca.png" alt="Acerca de" className="nav-logo" /> Acerca de
-              </Link>
-            </li>
-            <li>
-              <Link to="/iniciar-sesion">
-                <img src="/iniciar.png" alt="Iniciar sesión" className="nav-logo" /> Iniciar sesión
-              </Link>
-            </li>
-          </ul>
-        </nav>
-      </header>
-
-      <main className="main-content">
-        <Routes>
-          <Route path="/" element={<Presentacion />} />
-          <Route path="/buscar" element={<Buscar />} />
-          <Route path="/donar" element={<Donar />} />
-          <Route path="/recaudar-fondos" element={<RecaudarFondos />} />
-          <Route path="/acerca-de" element={<AcercaDe />} />
-          <Route path="/iniciar-sesion" element={<IniciarSesion />} />
-        </Routes>
-      </main>
-
-      <Footer />
+      <div className="app-container">
+        <Header />
+        <main className="main-content">
+          <Routes>
+            <Route path="/" element={<Presentacion />} />
+            <Route path="/buscar" element={<Buscar />} />
+            <Route path="/donar" element={<Donar />} />
+            <Route path="/recaudar-fondos" element={<RecaudarFondos />} />
+            <Route path="/acerca-de" element={<AcercaDe />} />
+            <Route path="/iniciar-sesion" element={<IniciarSesion />} />
+          </Routes>
+        </main>
+        <Footer />
+      </div>
     </Router>
   );
 };
 
+// Componente Header (Barra de navegación)
+const Header = () => {
+  return (
+    <header className="navbar">
+      <nav>
+        <ul className="nav-links">
+          <NavItem to="/" imgSrc="/iniciosesion.jpg" alt="Inicio" text="Inicio" />
+          <NavItem to="/buscar" imgSrc="/busqueda.png" alt="Buscar" text="Buscar" />
+          <NavItem to="/donar" imgSrc="/donar.png" alt="Donar" text="Donar" />
+          <NavItem to="/recaudar-fondos" imgSrc="/recaudar.png" alt="Recaudar fondos" text="Recaudar fondos" />
+          <NavItem to="/acerca-de" imgSrc="/acerca.png" alt="Acerca de" text="Acerca de" />
+          <NavItem to="/iniciar-sesion" imgSrc="/iniciar.png" alt="Iniciar sesión" text="Iniciar sesión" />
+        </ul>
+      </nav>
+    </header>
+  );
+};
+
+// Componente reutilizable para los enlaces del navbar
+const NavItem = ({ to, imgSrc, alt, text }) => {
+  return (
+    <li>
+      <Link to={to}>
+        <img src={imgSrc} alt={alt} className="nav-logo" /> {text}
+      </Link>
+    </li>
+  );
+};
+
+// Componente Footer (se oculta en la página principal)
 const Footer = () => {
   const location = useLocation();
+  
+  // Si estamos en la página de inicio, no mostrar el footer
   if (location.pathname === "/") {
     return null;
   }
