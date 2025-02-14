@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from 'react';
-import { getCampaigns } from '../api';
 import './Buscar.css';
 
 const Buscar = () => {
@@ -13,31 +12,29 @@ const Buscar = () => {
 
     const fetchCampaigns = async () => {
         try {
-            const data = await getCampaigns();
+            const res = await fetch('http://localhost:5000/api/campaigns');
+            const data = await res.json();
             if (Array.isArray(data)) {
                 setCampañas(data);
             } else {
-                console.error("Error: 'getCampaigns()' no devolvió un array válido.");
-                setCampañas([]); // Evita que sea undefined
+                console.error("Error: Datos no válidos");
+                setCampañas([]);
             }
         } catch (error) {
             console.error("Error al obtener las campañas:", error);
-            setCampañas([]); // Evita que sea undefined en caso de error
+            setCampañas([]);
         }
     };
 
-    // Filtrar por nombre o categoría
-    const campañasFiltradas = (Array.isArray(campañas) ? campañas : []).filter(campaña =>
-        campaña?.nombre?.toLowerCase().includes(busqueda.toLowerCase()) &&
+    const campañasFiltradas = campañas.filter(campaña =>
+        campaña?.name?.toLowerCase().includes(busqueda.toLowerCase()) &&
         (filtroCategoria === '' || campaña?.categoria === filtroCategoria)
     );
 
     return (
         <div className="buscar-container">
-            <h1 className="buscar-title">Página de Buscar</h1>
-            <p className="buscar-description">
-                Aquí puedes buscar campañas relacionadas a diferentes categorías.
-            </p>
+            <h1 className="buscar-title">Buscar Campañas</h1>
+            <p className="buscar-description">Encuentra campañas activas y apoya una causa.</p>
 
             {/* Barra de búsqueda */}
             <input
@@ -54,16 +51,21 @@ const Buscar = () => {
                 <button onClick={() => setFiltroCategoria('Educación')} className={filtroCategoria === 'Educación' ? 'active' : ''}>Educación</button>
                 <button onClick={() => setFiltroCategoria('Salud')} className={filtroCategoria === 'Salud' ? 'active' : ''}>Salud</button>
                 <button onClick={() => setFiltroCategoria('Medio Ambiente')} className={filtroCategoria === 'Medio Ambiente' ? 'active' : ''}>Medio Ambiente</button>
+                <button onClick={() => setFiltroCategoria('Animales')} className={filtroCategoria === 'Animales' ? 'active' : ''}>Animales</button>
+                <button onClick={() => setFiltroCategoria('Emergencias')} className={filtroCategoria === 'Emergencias' ? 'active' : ''}>Emergencias</button>
+                <button onClick={() => setFiltroCategoria('Tecnología')} className={filtroCategoria === 'Tecnología' ? 'active' : ''}>Tecnología</button>
+                <button onClick={() => setFiltroCategoria('Cultura')} className={filtroCategoria === 'Cultura' ? 'active' : ''}>Cultura</button>
+                <button onClick={() => setFiltroCategoria('Deporte')} className={filtroCategoria === 'Deporte' ? 'active' : ''}>Deporte</button>
             </div>
 
             {/* Lista de campañas */}
             <div className="campañas-list">
                 {campañasFiltradas.length > 0 ? (
                     campañasFiltradas.map((campaña) => (
-                        <div key={campaña?.id || Math.random()} className="campaña-card">
-                            <h3>{campaña?.nombre || "Sin nombre"}</h3>
-                            <p>{campaña?.descripcion || "Sin descripción disponible"}</p>
-                            <span className="campaña-categoria">{campaña?.categoria || "Sin categoría"}</span>
+                        <div key={campaña?.idcampaigns} className="campaña-card">
+                            <h3>{campaña?.name}</h3>
+                            <p>{campaña?.description}</p>
+                            <span className="campaña-categoria">{campaña?.categoria}</span>
                         </div>
                     ))
                 ) : (
@@ -72,7 +74,7 @@ const Buscar = () => {
             </div>
 
             {/* Pie de página */}
-            <footer className="buscar-footer">2025</footer>
+            <footer className="buscar-footer">2025 © Plataforma de Donaciones</footer>
         </div>
     );
 };

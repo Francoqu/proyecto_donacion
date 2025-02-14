@@ -1,76 +1,84 @@
-import React from 'react';
-import { BrowserRouter as Router, Route, Routes, Link, useLocation } from 'react-router-dom';
-import Presentacion from './components/Presentacion';
+import React, { useState, useEffect } from 'react';
+import { BrowserRouter as Router, Route, Routes, Link, Navigate, useNavigate } from 'react-router-dom';
 import Buscar from './components/Buscar';
 import Donar from './components/Donar';
 import RecaudarFondos from './components/RecaudarFondos';
 import AcercaDe from './components/AcercaDe';
 import IniciarSesion from './components/IniciarSesion';
-import './App.css'; // Archivo CSS para el diseño
+import Registrar from './components/Registrar';
+import Perfil from './components/Perfil';
+import Presentacion from './components/Presentacion';
+import './App.css';
 
-const App = () => {
-  return (
-    <Router>
-      <div className="app-container">
-        <Header />
-        <main className="main-content">
-          <Routes>
-            <Route path="/" element={<Presentacion />} />
-            <Route path="/buscar" element={<Buscar />} />
-            <Route path="/donar" element={<Donar />} />
-            <Route path="/recaudar-fondos" element={<RecaudarFondos />} />
-            <Route path="/acerca-de" element={<AcercaDe />} />
-            <Route path="/iniciar-sesion" element={<IniciarSesion />} />
-          </Routes>
-        </main>
-        <Footer />
-      </div>
-    </Router>
-  );
-};
+// 📌 Componente para manejar el layout y la navegación
+const Layout = ({ user, setUser }) => {
+  const navigate = useNavigate();
 
-// Componente Header (Barra de navegación)
-const Header = () => {
+  useEffect(() => {
+    const storedUser = JSON.parse(localStorage.getItem('user'));
+    if (storedUser) {
+      setUser(storedUser);
+    }
+  }, []);
+
+  const handleLogout = () => {
+    localStorage.removeItem('user');
+    setUser(null);
+    navigate('/');
+  };
+
   return (
     <header className="navbar">
+      <div className="logo">
+        <img src="logo.png" alt="Logo" className="logo-img" />
+      </div>
       <nav>
         <ul className="nav-links">
-          <NavItem to="/" imgSrc="/iniciosesion.jpg" alt="Inicio" text="Inicio" />
-          <NavItem to="/buscar" imgSrc="/busqueda.png" alt="Buscar" text="Buscar" />
-          <NavItem to="/donar" imgSrc="/donar.png" alt="Donar" text="Donar" />
-          <NavItem to="/recaudar-fondos" imgSrc="/recaudar.png" alt="Recaudar fondos" text="Recaudar fondos" />
-          <NavItem to="/acerca-de" imgSrc="/acerca.png" alt="Acerca de" text="Acerca de" />
-          <NavItem to="/iniciar-sesion" imgSrc="/iniciar.png" alt="Iniciar sesión" text="Iniciar sesión" />
+          <li><Link to="/">Inicio</Link></li>
+          <li><Link to="/buscar">Buscar</Link></li>
+          <li><Link to="/donar">Donar</Link></li>
+          <li><Link to="/recaudar-fondos">Recaudar fondos</Link></li>
+          <li><Link to="/acerca-de">Acerca de</Link></li>
+          {user ? (
+            <>
+              <li><Link to={`/perfil/${user.id}`}>Perfil</Link></li>
+              <li><button className="logout-button" onClick={handleLogout}>Cerrar sesión</button></li>
+            </>
+          ) : (
+            <>
+              <li><Link to="/iniciar-sesion">Iniciar sesión</Link></li>
+              <li><Link to="/registrar">Registrarse</Link></li>
+            </>
+          )}
         </ul>
       </nav>
     </header>
   );
 };
 
-// Componente reutilizable para los enlaces del navbar
-const NavItem = ({ to, imgSrc, alt, text }) => {
-  return (
-    <li>
-      <Link to={to}>
-        <img src={imgSrc} alt={alt} className="nav-logo" /> {text}
-      </Link>
-    </li>
-  );
-};
-
-// Componente Footer (se oculta en la página principal)
-const Footer = () => {
-  const location = useLocation();
-  
-  // Si estamos en la página de inicio, no mostrar el footer
-  if (location.pathname === "/") {
-    return null;
-  }
+const App = () => {
+  const [user, setUser] = useState(null);
 
   return (
-    <footer className="footer">
-      <p>2024 Madeleine Jimenez, Franco Quesada y Jhonder Triana.</p>
-    </footer>
+    <Router>
+      <Layout user={user} setUser={setUser} />
+      <main className="main-content">
+        <Routes>
+          <Route path="/" element={<Presentacion />} />
+          <Route path="/buscar" element={<Buscar />} />
+          <Route path="/donar" element={<Donar />} />
+          <Route path="/recaudar-fondos" element={<RecaudarFondos />} />
+          <Route path="/acerca-de" element={<AcercaDe />} />
+          <Route path="/iniciar-sesion" element={<IniciarSesion setUser={setUser} />} />
+          <Route path="/registrar" element={<Registrar />} />
+          <Route path="/perfil/:userId" element={<Perfil />} />
+          <Route path="*" element={<Navigate to="/" />} />  {/* Redirección a Inicio en rutas inválidas */}
+        </Routes>
+      </main>
+      <footer className="footer">
+        <p>2025 © Plataforma de Donaciones</p>
+      </footer>
+    </Router>
   );
 };
 

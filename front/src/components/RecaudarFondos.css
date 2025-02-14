@@ -1,174 +1,49 @@
-/* Contenedor principal */
 .contenedor {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 80vh;
-  background: #f9f9f900;
-}
-
-/* Formulario con efecto vidrio */
-.formulario {
-  background: rgba(255, 255, 255, 0.2); /* Fondo semi-transparente */
-  padding: 20px;
-  border-radius: 10px;
-  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+  max-width: 600px;
+  margin: auto;
   text-align: center;
-  max-width: 400px;
-  width: 80%;
-  backdrop-filter: blur(10px); /* Difuminado */
-  border: 1px solid rgba(255, 255, 255, 0.3);
+  padding: 20px;
 }
 
-/* Título */
 .titulo {
   font-size: 2rem;
-  color: #000000;
-  margin-bottom: 15px;
-  font-weight: bold;
-  text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.5);
+  color: #2c3e50;
+  margin-bottom: 10px;
 }
 
-/* Subtítulo */
 .subtitulo {
   font-size: 1.2rem;
-  color: #000000;
+  color: #555;
   margin-bottom: 20px;
-  text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.3);
 }
 
-/* Campos del formulario */
-.campo {
-  width: 100%;
-  padding: 12px;
-  margin: 10px 0;
-  border-radius: 10px;
-  border: 1px solid #ffffff;
+.mensaje {
   font-size: 1rem;
-  background-color: rgba(255, 255, 255, 0.3);
-  color: white;
-  outline: none;
-  transition: all 0.3s ease-in-out;
-}
-
-.campo::placeholder {
-  color: rgba(255, 255, 255, 0.7);
-}
-
-.campo:focus {
-  background-color: rgba(255, 255, 255, 0.5);
-  border: 1px solid #3498db;
-}
-
-/* Fechas */
-.fechas {
-  display: flex;
-  justify-content: space-between;
-  gap: 10px;
-}
-
-.fechas .campo {
-  width: 48%;
-}
-
-/* Botones */
-.boton {
-  padding: 12px;
-  width: 100%;
-  max-width: 250px;
-  margin-top: 15px;
-  font-size: 1rem;
-  border: none;
-  border-radius: 25px;
-  cursor: pointer;
+  color: green;
   font-weight: bold;
-  background: linear-gradient(135deg, #3498db, #1abc9c);
+  margin-bottom: 15px;
+}
+
+.formulario input, .formulario select, .formulario textarea {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 15px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  font-size: 1rem;
+}
+
+.boton {
+  background: #3498db;
   color: white;
-  transition: all 0.3s ease-in-out;
-  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-top: 10px;
+  width: 100%;
 }
 
 .boton:hover {
-  background: linear-gradient(135deg, #2980b9, #16a085);
-  transform: scale(1.05);
-  box-shadow: 0px 6px 15px rgba(0, 0, 0, 0.3);
-}
-
-/* Botón de regresar */
-.boton-regresar {
-  background: linear-gradient(135deg, #e74c3c, #c0392b);
-}
-
-.boton-regresar:hover {
-  background: linear-gradient(135deg, #c0392b, #a93226);
-}
-
-/* Mensaje de éxito */
-.mensaje {
-  font-size: 1rem;
-  color: #2ecc71;
-  font-weight: bold;
-  margin-top: 15px;
-  text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.2);
-}
-
-/* Centrar elementos */
-.centrado {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
-}
-
-/* Contenedor de botones de campaña */
-.botones-campañas {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 15px;
-}
-
-/* Contenedor de cada botón e imagen */
-.contenedor-boton {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  width: 100%;
-}
-
-/* Estilo de las imágenes */
-.imagen-boton {
-  width: 80px;
-  height: 80px;
-  object-fit: cover;
-  border-radius: 10px;
-  margin-bottom: 5px;
-  transition: transform 0.3s ease-in-out;
-}
-
-.imagen-boton:hover {
-  transform: scale(1.1);
-}
-
-/* Responsividad */
-@media (max-width: 600px) {
-  .fechas {
-      flex-direction: column;
-  }
-  .fechas .campo {
-      width: 100%;
-  }
-
-  .formulario {
-      width: 95%;
-  }
-
-  .titulo {
-      font-size: 1.8rem;
-  }
-
-  .subtitulo {
-      font-size: 1rem;
-  }
+  background: #2980b9;
 }

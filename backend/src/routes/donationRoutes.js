@@ -1,12 +1,27 @@
 const express = require('express');
-const { createDonation, getAllDonations } = require('../controllers/donationController');
-
 const router = express.Router();
+const db = require('../config/db');
 
-// Ruta para agregar una donación
-router.post('/donar', createDonation);
+// Obtener todas las donaciones
+router.get('/', (req, res) => {
+    db.query('SELECT * FROM donations_partitioned', (err, results) => {
+        if (err) res.status(500).json({ error: err.message });
+        else res.json(results);
+    });
+});
 
-// Ruta para obtener todas las donaciones
-router.get('/donaciones', getAllDonations);
+// Registrar una donación
+router.post('/', (req, res) => {
+    const { donorName, amount, campaignId, donationType, status, userId } = req.body;
+
+    const query = `
+        INSERT INTO donations_partitioned (amount, donation_type, status, users_iduser, campaigns_idcampaigns) 
+        VALUES (?, ?, ?, ?, ?)`;
+
+    db.query(query, [amount, donationType, status, userId, campaignId], (err, result) => {
+        if (err) res.status(500).json({ error: err.message });
+        else res.json({ message: "Donación registrada con éxito", id: result.insertId });
+    });
+});
 
 module.exports = router;
