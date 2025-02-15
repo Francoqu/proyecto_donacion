@@ -3,78 +3,48 @@
     justify-content: center;
     align-items: center;
     height: 100vh;
-    background: linear-gradient(to right, #2c3e50, #4ca1af);
-    padding: 20px;
-}
-
-.registrar-form {
+    background: #f4f4f4;
+  }
+  
+  .registrar-form {
     background: white;
-    padding: 20px;
-    border-radius: 10px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    padding: 2rem;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 400px;
     text-align: center;
-    width: 350px;
-}
-
-.registrar-title {
-    font-size: 2rem;
-    color: #2c3e50;
-    margin-bottom: 10px;
-}
-
-.registrar-description {
-    font-size: 1rem;
-    color: #555;
-    margin-bottom: 15px;
-}
-
-.registrar-input {
+  }
+  
+  .registrar-title {
+    font-size: 1.8rem;
+    margin-bottom: 1rem;
+  }
+  
+  input {
     width: 100%;
     padding: 10px;
-    margin-bottom: 15px;
+    margin: 10px 0;
+    border: 1px solid #ddd;
     border-radius: 5px;
-    border: 1px solid #ccc;
-    font-size: 1rem;
-}
-
-.registrar-button {
+  }
+  
+  button {
     width: 100%;
     padding: 10px;
-    background: #3498db;
+    background: #007bff;
     color: white;
     border: none;
     border-radius: 5px;
     cursor: pointer;
-    font-size: 1rem;
-}
-
-.registrar-button:hover {
-    background: #2980b9;
-}
-
-.registrar-login-text {
-    font-size: 0.9rem;
-    color: #555;
-    margin-top: 10px;
-}
-
-.registrar-login-link {
-    color: #3498db;
-    text-decoration: none;
-}
-
-.registrar-login-link:hover {
-    text-decoration: underline;
-}
-
-.registrar-error {
+  }
+  
+  button:hover {
+    background: #0056b3;
+  }
+  
+  .registrar-error {
     color: red;
-    font-size: 0.9rem;
-    margin-bottom: 10px;
-}
-
-.registrar-success {
-    color: green;
-    font-size: 0.9rem;
-    margin-bottom: 10px;
-}
+    font-size: 14px;
+  }
+  

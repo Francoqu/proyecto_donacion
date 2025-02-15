@@ -1,9 +1,9 @@
-import React, { useState } from 'react'; 
+import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import './IniciarSesion.css';
 
 const IniciarSesion = ({ setUser }) => {
-  const [username, setUsername] = useState('');
+  const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [error, setError] = useState('');
   const navigate = useNavigate();
@@ -12,11 +12,16 @@ const IniciarSesion = ({ setUser }) => {
     e.preventDefault();
     setError('');
 
+    if (!email || !password) {
+      setError('⚠️ Email y contraseña son obligatorios.');
+      return;
+    }
+
     try {
       const res = await fetch('http://localhost:5000/api/users/login', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ username, password }),
+        body: JSON.stringify({ email, password }),
       });
 
       const data = await res.json();
@@ -26,7 +31,7 @@ const IniciarSesion = ({ setUser }) => {
         setUser(data);
         navigate(`/perfil/${data.id}`);
       } else {
-        setError('⚠️ Credenciales incorrectas. Verifica tus datos.');
+        setError(data.error || '❌ Credenciales incorrectas.');
       }
     } catch (error) {
       setError('❌ Error de conexión con el servidor.');
@@ -34,42 +39,41 @@ const IniciarSesion = ({ setUser }) => {
   };
 
   return (
-    <div className="login-container">
-      <div className="login-box">
-        <h1 className="login-title">🔑 Iniciar Sesión</h1>
-        <p className="login-description">Accede con tus credenciales para continuar.</p>
+    <div className="iniciar-container">
+      <form className="iniciar-form" onSubmit={handleLogin}>
+        <h1 className="iniciar-title">Iniciar Sesión</h1>
+        <p className="iniciar-description">
+          Ingresa tus credenciales para acceder.
+        </p>
 
-        {error && <p className="login-error">{error}</p>}
+        {error && <p className="iniciar-error">{error}</p>}
 
-        <form className="login-form" onSubmit={handleLogin}>
-          <input
-            type="text"
-            placeholder="👤 Nombre de usuario"
-            className="login-input"
-            value={username}
-            onChange={(e) => setUsername(e.target.value)}
-            required
-          />
-          <input
-            type="password"
-            placeholder="🔒 Contraseña"
-            className="login-input"
-            value={password}
-            onChange={(e) => setPassword(e.target.value)}
-            required
-          />
-          <button type="submit" className="login-button">
-            Iniciar Sesión
-          </button>
-        </form>
-
-        <p className="login-register-text">
+        <input
+          type="email"
+          placeholder="Correo Electrónico"
+          className="iniciar-input"
+          value={email}
+          onChange={(e) => setEmail(e.target.value)}
+          required
+        />
+        <input
+          type="password"
+          placeholder="Contraseña"
+          className="iniciar-input"
+          value={password}
+          onChange={(e) => setPassword(e.target.value)}
+          required
+        />
+        <button type="submit" className="iniciar-button">
+          🔑 Iniciar Sesión
+        </button>
+        <p className="iniciar-register-text">
           ¿No tienes cuenta?{' '}
-          <span className="login-register-link" onClick={() => navigate('/registro')}>
+          <span className="iniciar-register-link" onClick={() => navigate('/registro')}>
             Regístrate aquí
           </span>
         </p>
-      </div>
+      </form>
     </div>
   );
 };
