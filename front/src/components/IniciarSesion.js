@@ -34,41 +34,42 @@ const IniciarSesion = ({ setUser }) => {
   };
 
   return (
-    <div className="iniciar-container">
-      <form className="iniciar-form" onSubmit={handleLogin}>
-        <h1 className="iniciar-title">Iniciar Sesión</h1>
-        <p className="iniciar-description">
-          Ingresa tus credenciales para acceder.
-        </p>
+    <div className="login-container">
+      <div className="login-box">
+        <h1 className="login-title">🔐 Iniciar Sesión</h1>
+        <p className="login-description">Ingresa tus credenciales para acceder.</p>
 
-        {error && <p className="iniciar-error">{error}</p>}
+        {error && <p className="login-error">{error}</p>}
 
-        <input
-          type="email"
-          placeholder="Correo Electrónico"
-          className="iniciar-input"
-          value={email}
-          onChange={(e) => setEmail(e.target.value)}
-          required
-        />
-        <input
-          type="password"
-          placeholder="Contraseña"
-          className="iniciar-input"
-          value={password}
-          onChange={(e) => setPassword(e.target.value)}
-          required
-        />
-        <button type="submit" className="iniciar-button">
-          🔑 Iniciar Sesión
-        </button>
-        <p className="iniciar-register-text">
+        <form onSubmit={handleLogin}>
+          <input
+            type="email"
+            placeholder="📧 Correo Electrónico"
+            className="login-input"
+            value={email}
+            onChange={(e) => setEmail(e.target.value)}
+            required
+          />
+          <input
+            type="password"
+            placeholder="🔑 Contraseña"
+            className="login-input"
+            value={password}
+            onChange={(e) => setPassword(e.target.value)}
+            required
+          />
+          <button type="submit" className="login-button">
+            🚀 Iniciar Sesión
+          </button>
+        </form>
+
+        <p className="login-register-text">
           ¿No tienes cuenta?{' '}
-          <a href="/registro" className="iniciar-register-link">
+          <a href="/registro" className="login-register-link">
             Regístrate aquí
           </a>
         </p>
-      </form>
+      </div>
     </div>
   );
 };

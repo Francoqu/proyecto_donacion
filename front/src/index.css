@@ -10,30 +10,26 @@
   height: 20px;
 }
 
-/* Fondo de la página con imagen en alta calidad */
+/* 🔥 Fondo sólido sin imágenes */
 body {
   margin: 0;
   font-family: 'Playfair Display', serif;
-  background-image: url('../public/ciudad.webp'); /* Ruta de la imagen */
-  background-size: cover;  /* Ajusta la imagen para cubrir toda la pantalla */
-  background-position: center center; /* Centra la imagen tanto horizontal como verticalmente */
-  background-repeat: no-repeat; /* No repetir la imagen */
-  background-attachment: fixed; /* Mantiene la imagen fija al hacer scroll */
-  background-color: #000000; /* Color de respaldo si la imagen no carga */
-  min-height: 100vh; /* Asegura que ocupe toda la pantalla */
+  background: #f8f9fa; /* 🔹 Fondo gris claro */
+  min-height: 100vh;
 }
 
-/* Ajuste adicional para mejorar la legibilidad */
+/* 🔥 Quitar el efecto de desenfoque en el fondo */
 .main-content {
-  backdrop-filter: blur(5px); /* Aplica un efecto borroso en el fondo */
-  background-color: rgba(0, 0, 0, 0.6); /* Agrega una capa semitransparente para mejor contraste */
+  background: #ffffff; /* 🔹 Fondo blanco */
   padding: 2rem;
   border-radius: 10px;
+  box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.1); /* 🔹 Sombra ligera */
 }
 
+/* Barra de navegación */
 header {
-  background: linear-gradient(90deg, #fefefe, #5aa3ec); /* Gradiente más elegante */
-  color: rgb(0, 0, 0);
+  background: #2c3e50; /* 🔹 Color sólido en la barra de navegación */
+  color: white;
   padding: 10px 20px;
   display: flex;
   justify-content: space-between;
@@ -63,7 +59,7 @@ header {
 }
 
 .navbar ul li a {
-  color: #080808;
+  color: white;
   text-decoration: none;
   font-size: 16px;
   font-weight: bold;
@@ -71,53 +67,56 @@ header {
 }
 
 .navbar ul li a:hover {
-  color: #f64118; /* Verde elegante */
+  color: #f64118; /* 🔹 Efecto hover */
   transform: scale(1.05);
 }
 
+/* Botón de llamada a la acción */
 .cta {
-  background-color: #000000; /* Verde llamativo */
+  background-color: #3498db; /* 🔹 Azul llamativo */
   color: white;
   border: none;
   padding: 10px 20px;
   cursor: pointer;
   font-size: 16px;
   border-radius: 25px;
-  box-shadow: 0px 4px 10px rgba(22, 93, 79, 0.5);
+  box-shadow: 0px 4px 10px rgba(52, 152, 219, 0.5);
   transition: background-color 0.3s ease, transform 0.2s ease;
 }
 
 .cta:hover {
-  background-color: #16a085; /* Verde más oscuro */
+  background-color: #2980b9; /* 🔹 Azul más oscuro */
   transform: scale(1.1);
 }
 
+/* Sección principal */
 .hero {
   text-align: center;
   margin: 50px auto;
   padding: 50px 20px;
-  background: #ffffff; /* Fondo blanco puro */
+  background: #ffffff;
   border-radius: 15px;
-  box-shadow: 0px 6px 15px rgba(0, 0, 0, 0.1); /* Sombra suave */
+  box-shadow: 0px 6px 15px rgba(0, 0, 0, 0.1);
   max-width: 800px;
 }
 
 .hero h1 {
   font-size: 2.5rem;
-  color: #16a085; /* Verde oscuro elegante */
+  color: #2c3e50;
   margin-bottom: 20px;
 }
 
 .hero p {
   font-size: 1.2rem;
-  color: #555; /* Texto gris oscuro */
+  color: #555;
   margin-bottom: 20px;
 }
 
+/* Pie de página */
 footer {
   text-align: center;
   padding: 10px 0;
-  background: linear-gradient(90deg, #fdfcfce1, #5aa3ece4);
+  background: #2c3e50;
   color: white;
   margin-top: 30px;
   font-size: 14px;

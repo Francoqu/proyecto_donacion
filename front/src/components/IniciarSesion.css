@@ -1,32 +1,34 @@
-/* Contenedor principal */
+/* Contenedor principal de la página de inicio de sesión */
 .login-container {
   display: flex;
   justify-content: center;
   align-items: center;
   height: 100vh;
-  background: linear-gradient(to right, #4facfe, #00f2fe);
+  background-color: #f8f9fa; /* Fondo gris claro */
+  font-family: 'Arial', sans-serif;
 }
 
-/* Caja de inicio de sesión */
+/* Caja del formulario de inicio de sesión */
 .login-box {
   background: white;
-  padding: 2rem;
+  padding: 30px;
   border-radius: 12px;
   box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
   text-align: center;
-  width: 350px;
+  width: 400px;
+  max-width: 90%;
 }
 
 /* Título */
 .login-title {
+  color: #333;
   font-size: 24px;
   margin-bottom: 10px;
-  color: #333;
 }
 
 /* Descripción */
 .login-description {
-  font-size: 14px;
+  font-size: 16px;
   color: #666;
   margin-bottom: 20px;
 }
@@ -34,49 +36,49 @@
 /* Inputs */
 .login-input {
   width: 100%;
-  padding: 10px;
-  margin: 8px 0;
+  padding: 12px;
+  margin: 10px 0;
   border: 1px solid #ccc;
-  border-radius: 8px;
+  border-radius: 6px;
   font-size: 16px;
+  background-color: #f9f9f9;
 }
 
 /* Botón de inicio de sesión */
 .login-button {
   width: 100%;
   padding: 12px;
-  border: none;
-  border-radius: 8px;
-  background: #4facfe;
+  background-color: #007bff;
   color: white;
   font-size: 18px;
+  border: none;
+  border-radius: 6px;
   cursor: pointer;
   transition: 0.3s ease;
 }
 
 .login-button:hover {
-  background: #00c6ff;
+  background-color: #0056b3;
 }
 
-/* Mensajes de error */
+/* Mensaje de error */
 .login-error {
-  color: red;
-  font-size: 14px;
-  margin-top: 10px;
+  color: #ff4d4d;
+  font-weight: bold;
+  margin-bottom: 10px;
 }
 
 /* Texto de registro */
 .login-register-text {
-  font-size: 14px;
   margin-top: 15px;
+  font-size: 14px;
 }
 
 /* Link de registro */
 .login-register-link {
   color: #007bff;
+  text-decoration: none;
   font-weight: bold;
-  cursor: pointer;
-  transition: 0.3s;
 }
 
 .login-register-link:hover {
