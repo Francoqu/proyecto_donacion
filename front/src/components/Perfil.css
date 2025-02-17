@@ -1,59 +1,26 @@
 .perfil-container {
     max-width: 600px;
-    margin: auto;
-    text-align: center;
+    margin: 50px auto;
     padding: 20px;
-}
-
-.perfil-title {
-    font-size: 2rem;
-    color: #2c3e50;
-    margin-bottom: 10px;
-}
-
-.perfil-section-title {
-    font-size: 1.5rem;
-    color: #2980b9;
-    margin-top: 20px;
-}
-
-.donation-list {
-    list-style: none;
-    padding: 0;
-}
-
-.donation-item {
-    background: white;
-    padding: 10px;
-    margin: 10px 0;
-    border-radius: 5px;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-}
-
-.no-donations, .no-insignias, .cargando {
-    font-size: 1rem;
-    color: #888;
-    margin-top: 10px;
-}
-
-.insignia-container {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 15px;
-}
-
-.insignia-card {
-    background: white;
-    padding: 10px;
-    border-radius: 5px;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    background: #f9f9f9;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
     text-align: center;
-    width: 120px;
-}
-
-.insignia-img {
-    width: 50px;
-    height: 50px;
-    object-fit: contain;
-}
+  }
+  
+  .perfil-info {
+    text-align: left;
+    padding: 10px;
+  }
+  
+  .perfil-info p {
+    margin: 10px 0;
+    font-size: 16px;
+  }
+  
+  .perfil-mensaje, .perfil-error {
+    text-align: center;
+    font-size: 18px;
+    color: #ff0000;
+  }
+  

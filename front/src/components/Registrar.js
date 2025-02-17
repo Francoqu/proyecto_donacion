@@ -7,13 +7,13 @@ const Registrar = () => {
     first_name: '',
     last_name: '',
     email: '',
-    username: '', // Se mantiene si es necesario, si no lo usas, elimínalo
     password: '',
     id_card: '',
     phone: '',
   });
 
   const [error, setError] = useState('');
+  const [success, setSuccess] = useState('');
   const navigate = useNavigate();
 
   const handleChange = (e) => {
@@ -23,6 +23,7 @@ const Registrar = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     setError('');
+    setSuccess('');
 
     try {
       const res = await fetch('http://localhost:5000/api/users/register', {
@@ -34,8 +35,10 @@ const Registrar = () => {
       const data = await res.json();
 
       if (res.ok) {
-        alert('✅ Usuario registrado con éxito.');
-        navigate('/iniciar-sesion'); // Redirige a la página de inicio de sesión
+        setSuccess('✅ Usuario registrado con éxito. Redirigiendo...');
+        setTimeout(() => {
+          navigate('/iniciar-sesion');
+        }, 2000); // Redirige a iniciar sesión después de 2 segundos
       } else {
         setError(data.error || '❌ Error al registrar usuario.');
       }
@@ -50,14 +53,11 @@ const Registrar = () => {
         <h1 className="registrar-title">Registro</h1>
 
         {error && <p className="registrar-error">{error}</p>}
+        {success && <p className="registrar-success">{success}</p>}
 
         <input type="text" name="first_name" placeholder="Nombre" onChange={handleChange} required />
         <input type="text" name="last_name" placeholder="Apellido" onChange={handleChange} required />
         <input type="email" name="email" placeholder="Correo Electrónico" onChange={handleChange} required />
-
-        {/* Campo de usuario (Opcional, puedes eliminarlo si usas solo email) */}
-        <input type="text" name="username" placeholder="Nombre de Usuario" onChange={handleChange} required />
-
         <input type="password" name="password" placeholder="Contraseña" onChange={handleChange} required />
         <input type="number" name="id_card" placeholder="Cédula" onChange={handleChange} required />
         <input type="tel" name="phone" placeholder="Teléfono (opcional)" onChange={handleChange} />

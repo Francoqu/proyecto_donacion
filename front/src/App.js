@@ -20,11 +20,18 @@ const App = () => {
     }
   }, []);
 
+  const handleLogout = () => {
+    localStorage.removeItem('user');
+    setUser(null);
+  };
+
   return (
     <Router>
       <header className="navbar">
         <div className="logo">
-          <img src="logo.png" alt="Logo" className="logo-img" />
+          <Link to="/">
+            <img src="/logo.png" alt="Logo" className="logo-img" />
+          </Link>
         </div>
         <nav>
           <ul className="nav-links">
@@ -36,7 +43,11 @@ const App = () => {
             {user ? (
               <>
                 <li><Link to={`/perfil/${user.id}`}>Perfil</Link></li>
-                <li><button className="logout-button" onClick={() => { setUser(null); localStorage.removeItem('user'); }}>Cerrar sesión</button></li>
+                <li>
+                  <button className="logout-button" onClick={handleLogout}>
+                    Cerrar sesión
+                  </button>
+                </li>
               </>
             ) : (
               <>
@@ -50,7 +61,6 @@ const App = () => {
 
       <main className="main-content">
         <Routes>
-          {/* La página de inicio ahora muestra Presentacion.js */}
           <Route path="/" element={<Presentacion />} />
           <Route path="/buscar" element={<Buscar />} />
           <Route path="/donar" element={<Donar />} />

@@ -12,11 +12,6 @@ const IniciarSesion = ({ setUser }) => {
     e.preventDefault();
     setError('');
 
-    if (!email || !password) {
-      setError('⚠️ Email y contraseña son obligatorios.');
-      return;
-    }
-
     try {
       const res = await fetch('http://localhost:5000/api/users/login', {
         method: 'POST',
@@ -27,8 +22,8 @@ const IniciarSesion = ({ setUser }) => {
       const data = await res.json();
 
       if (res.ok) {
-        localStorage.setItem('user', JSON.stringify(data));
-        setUser(data);
+        localStorage.setItem('user', JSON.stringify(data)); // Guardar usuario en localStorage
+        setUser(data); // Actualizar estado global de usuario
         navigate(`/perfil/${data.id}`);
       } else {
         setError(data.error || '❌ Credenciales incorrectas.');
@@ -69,9 +64,9 @@ const IniciarSesion = ({ setUser }) => {
         </button>
         <p className="iniciar-register-text">
           ¿No tienes cuenta?{' '}
-          <span className="iniciar-register-link" onClick={() => navigate('/registro')}>
+          <a href="/registro" className="iniciar-register-link">
             Regístrate aquí
-          </span>
+          </a>
         </p>
       </form>
     </div>
