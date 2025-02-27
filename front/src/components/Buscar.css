@@ -1,34 +1,214 @@
+/* Reset general */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Logo principal */
+.logo img {
+  width: 80px; /* Aumentamos el tamaño del logo */
+  height: auto;
+}
+
+/* Íconos de navegación */
+.icon {
+  width: 28px;
+  height: 28px;
+}
+
+/* 🔥 Fondo elegante y con mejor contraste */
+body {
+  margin: 0;
+  font-family: 'Playfair Display', serif;
+  background: #5d81c0; /* 🔹 Azul grisáceo suave */
+  color: #333;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* 📌 Encabezado fijo y de ancho completo */
+header {
+  background: #1f2d3d; /* 🔹 Azul oscuro profundo */
+  color: white;
+  padding: 20px 40px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.2);
+  width: 100%;
+  margin: 0;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1000;
+}
+
+/* Ajustar contenido para evitar que el header lo cubra */
+.main-content {
+  flex: 1;
+  padding: 100px 2rem 20px; /* Agregamos padding superior para no ocultar contenido */
+}
+
+/* 📌 Pie de página fijo y extendido */
+footer {
+  background: #1f2d3d; /* 🔹 Azul oscuro profundo */
+  color: white;
+  text-align: center;
+  padding: 20px 0;
+  width: 100%;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  box-shadow: 0px -5px 10px rgba(0, 0, 0, 0.2);
+}
+
+/* 🎯 Barra de navegación */
+.navbar ul {
+  list-style-type: none;
+  display: flex;
+  gap: 25px;
+  align-items: center;
+}
+
+.navbar ul li a {
+  color: white;
+  text-decoration: none;
+  font-size: 18px;
+  font-weight: bold;
+  transition: color 0.3s, transform 0.3s ease;
+}
+
+.navbar ul li a:hover {
+  color: #ffbe76; /* 🔹 Un tono naranja pastel más atractivo */
+  transform: scale(1.1);
+}
+
+/* 🎯 Botón de acción refinado */
+.cta {
+  background-color: #5dade2;
+  color: white;
+  border: none;
+  padding: 14px 35px;
+  cursor: pointer;
+  font-size: 20px;
+  font-weight: bold;
+  border-radius: 50px;
+  box-shadow: 0px 6px 18px rgba(93, 173, 226, 0.5);
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.cta:hover {
+  background-color: #2980b9;
+  transform: scale(1.12);
+}
+
+/* 🎯 Sección principal elegante */
+.hero {
+  text-align: center;
+  margin: 60px auto;
+  padding: 80px 40px;
+  background: #ffffff;
+  border-radius: 25px;
+  box-shadow: 0px 12px 30px rgba(0, 0, 0, 0.12);
+  max-width: 900px;
+}
+
+.hero h1 {
+  font-size: 3rem;
+  color: #1f2d3d;
+  margin-bottom: 20px;
+}
+
+.hero p {
+  font-size: 1.5rem;
+  color: #555;
+  margin-bottom: 20px;
+}
+
+/* 🔍 Estilos refinados para la búsqueda */
 .buscar-container {
   text-align: center;
-  padding: 20px;
+  padding: 35px;
+  background: #ffffff;
+  border-radius: 20px;
+  box-shadow: 0px 7px 22px rgba(0, 0, 0, 0.12);
+  margin: 40px auto;
+  max-width: 850px;
 }
 
 .buscar-title {
-  font-size: 2rem;
+  font-size: 2.4rem;
   font-weight: bold;
+  color: #1f2d3d;
+  margin-bottom: 25px;
 }
 
 .buscar-input {
-  width: 80%;
-  padding: 10px;
-  margin: 10px 0;
+  width: 90%;
+  padding: 16px;
+  margin: 20px 0;
+  border: 2px solid #ccc;
+  border-radius: 15px;
+  font-size: 1.3rem;
+  transition: border-color 0.3s ease;
+}
+
+.buscar-input:focus {
+  border-color: #5dade2;
+  outline: none;
 }
 
 .categoria-filtros button {
-  margin: 5px;
-  padding: 10px 15px;
+  margin: 10px;
+  padding: 14px 20px;
   cursor: pointer;
+  border: none;
+  border-radius: 15px;
+  background-color: #5dade2;
+  color: white;
+  font-size: 1.1rem;
+  transition: background-color 0.3s ease, transform 0.2s ease;
 }
 
+.categoria-filtros button:hover {
+  background-color: #3498db;
+  transform: scale(1.1);
+}
+
+/* 🎯 Tarjetas de campaña */
 .campañas-list {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
+  gap: 30px;
+  padding: 40px;
 }
 
 .campaña-card {
-  width: 250px;
+  width: 300px;
   border: 1px solid #ddd;
-  padding: 10px;
-  margin: 10px;
+  border-radius: 18px;
+  padding: 25px;
+  background: #ffffff;
+  box-shadow: 0px 8px 22px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.campaña-card:hover {
+  transform: scale(1.08);
+  box-shadow: 0px 10px 28px rgba(0, 0, 0, 0.15);
+}
+
+/* 📌 Asegurar que el contenido no sea ocultado por el pie de página */
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.main-content {
+  flex: 1; /* Permite que el contenido crezca */
+  padding-bottom: 80px; /* Evita que el footer cubra el contenido */
 }

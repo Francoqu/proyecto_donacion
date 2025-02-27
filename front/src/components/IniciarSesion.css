@@ -1,86 +1,106 @@
-/* Contenedor principal de la página de inicio de sesión */
-.login-container {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 100vh;
-  background-color: #f8f9fa; /* Fondo gris claro */
-  font-family: 'Arial', sans-serif;
+/* Reset general */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Playfair Display', serif; /* 🔹 Se mantiene la misma fuente */
+  color: black; /* 🔹 Todo el texto en negro */
 }
 
-/* Caja del formulario de inicio de sesión */
+
+
+/* 🎯 Caja del formulario de inicio de sesión */
 .login-box {
   background: white;
-  padding: 30px;
-  border-radius: 12px;
-  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+  padding: 50px;
+  border-radius: 50px;
+  box-shadow: 0px 12px 30px rgba(0, 0, 0, 0.2);
   text-align: center;
-  width: 400px;
-  max-width: 90%;
+  width: 650px;
+  max-width: 100%;
+  border: 2px solid black;
 }
 
-/* Título */
+/* 🎯 Título */
 .login-title {
-  color: #333;
-  font-size: 24px;
-  margin-bottom: 10px;
-}
-
-/* Descripción */
-.login-description {
-  font-size: 16px;
-  color: #666;
+  font-size: 32px;
+  font-weight: bold;
   margin-bottom: 20px;
+  letter-spacing: 1px;
 }
 
-/* Inputs */
+/* 🎯 Descripción */
+.login-description {
+  font-size: 18px;
+  margin-bottom: 25px;
+  line-height: 1.5;
+}
+
+/* 🎯 Inputs */
 .login-input {
   width: 100%;
-  padding: 12px;
-  margin: 10px 0;
-  border: 1px solid #ccc;
-  border-radius: 6px;
-  font-size: 16px;
+  padding: 16px;
+  margin: 15px 0;
+  border: 2px solid rgb(0, 0, 0);
+  border-radius: 12px;
+  font-size: 18px;
   background-color: #f9f9f9;
+  transition: all 0.3s ease-in-out;
 }
 
-/* Botón de inicio de sesión */
+.login-input:focus {
+  border-color: #6ce0fd;
+  outline: none;
+  box-shadow: 0px 0px 12px rgba(108, 224, 253, 0.5);
+  background: #ffffff;
+}
+
+/* 🎯 Botón de inicio de sesión */
 .login-button {
   width: 100%;
-  padding: 12px;
-  background-color: #007bff;
+  padding: 16px;
+  background: black;
   color: white;
-  font-size: 18px;
+  font-size: 20px;
   border: none;
-  border-radius: 6px;
+  border-radius: 30px;
   cursor: pointer;
-  transition: 0.3s ease;
+  transition: background 0.3s, transform 0.2s, box-shadow 0.3s;
+  box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.4);
+  font-weight: bold;
 }
 
 .login-button:hover {
-  background-color: #0056b3;
+  background: #6ce0fd;
+  color: black;
+  transform: scale(1.08);
+  box-shadow: 0px 10px 25px rgba(108, 224, 253, 0.5);
 }
 
-/* Mensaje de error */
+/* 🎯 Mensaje de error */
 .login-error {
   color: #ff4d4d;
   font-weight: bold;
-  margin-bottom: 10px;
+  margin-bottom: 14px;
 }
 
-/* Texto de registro */
+/* 🎯 Texto de registro */
 .login-register-text {
-  margin-top: 15px;
-  font-size: 14px;
+  margin-top: 20px;
+  font-size: 17px;
 }
 
-/* Link de registro */
+/* 🎯 Link de registro */
 .login-register-link {
-  color: #007bff;
+  color: black;
   text-decoration: none;
   font-weight: bold;
+  transition: color 0.3s;
+  border-bottom: 2px solid transparent;
 }
 
 .login-register-link:hover {
-  text-decoration: underline;
+  text-decoration: none;
+  color: #6ce0fd;
+  border-bottom: 2px solid #6ce0fd;
 }

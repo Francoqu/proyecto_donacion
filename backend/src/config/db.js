@@ -1,18 +1,23 @@
 const mysql = require('mysql2');
 
-const db = mysql.createConnection({
-  host: 'localhost',
-  user: 'root', // Cambia esto si tu usuario de MySQL es diferente
-  password: 'root', // Asegúrate de poner la contraseña de MySQL si es necesario
-  database: 'donaciones' // Nombre de la base de datos
+// 📌 Configurar conexión usando variables de entorno
+const pool = mysql.createPool({
+    host: process.env.DB_HOST || 'localhost',
+    user: process.env.DB_USER || 'root',
+    password: process.env.DB_PASSWORD || 'made',
+    database: process.env.DB_NAME || 'donaciones',
+    port: process.env.DB_PORT || 3306,
+    connectionLimit: 10
 });
 
-db.connect((err) => {
-  if (err) {
-    console.error('❌ Error de conexión a MySQL:', err);
-    return;
-  }
-  console.log('✅ Conectado a la base de datos MySQL');
+// 📌 Verificar conexión inicial
+pool.getConnection((err, connection) => {
+    if (err) {
+        console.error("❌ Error al conectar a MySQL:", err.message);
+    } else {
+        console.log("✅ Conexión a MySQL establecida correctamente.");
+        connection.release(); // Liberar conexión
+    }
 });
 
-module.exports = db;
+module.exports = pool;

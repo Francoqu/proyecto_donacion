@@ -1,45 +1,42 @@
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 import { useNavigate } from 'react-router-dom';
 import './Presentacion.css';
 
 const Presentacion = () => {
-  const [stats, setStats] = useState({ totalCampaigns: 0, totalDonations: 0, totalAmount: 0 });
   const navigate = useNavigate();
-
-  useEffect(() => {
-    fetch('http://localhost:5000/api/stats')
-      .then(res => res.json())
-      .then(data => setStats(data))
-      .catch(error => console.error('Error al obtener estadísticas:', error));
-  }, []);
 
   return (
     <div className="presentacion-container">
       <div className="presentacion-content">
-        <h1 className="presentacion-title">Bienvenido a la Plataforma de Donaciones</h1>
-        <p className="presentacion-subtitle">
-          Contribuye a causas importantes y ayuda a mejorar la vida de muchas personas.
-        </p>
+        {/* 🔹 Sección de Texto */}
+        <div className="presentacion-text">
+          <h1 className="presentacion-title">🌍 Solidaridad en Loja: Juntos por un Futuro Mejor</h1>
+          <p className="presentacion-subtitle">
+            Nuestra misión es ayudar a quienes más lo necesitan en la ciudad de Loja. Con tu donación, podemos brindar apoyo en salud, educación, vivienda y emergencias a cientos de personas en situación vulnerable.
+          </p>
 
-        {/* 📌 Muestra estadísticas dinámicas */}
-        <div className="stats-container">
-          <div className="stat-box">
-            <h3>{stats.totalCampaigns}</h3>
-            <p>Campañas activas</p>
+          {/* 🔹 Beneficios */}
+          <div className="presentacion-description">
+            <p>Tu generosidad hace la diferencia. Gracias a las contribuciones de personas como tú, hemos logrado:</p>
+            <ul>
+              <li>✅ Proveer alimentos y ropa a familias necesitadas.</li>
+              <li>✅ Financiar tratamientos médicos urgentes.</li>
+              <li>✅ Apoyar la educación de niños y jóvenes en riesgo.</li>
+              <li>✅ Brindar refugio a personas en situación de calle.</li>
+            </ul>
+            <p>Únete a nuestra comunidad solidaria y sé parte del cambio en Loja. 💖</p>
           </div>
-          <div className="stat-box">
-            <h3>{stats.totalDonations}</h3>
-            <p>Donaciones realizadas</p>
-          </div>
-          <div className="stat-box">
-            <h3>${stats.totalAmount}</h3>
-            <p>Total recaudado</p>
+
+          {/* 🔹 Botones de Acción */}
+          <div className="presentacion-buttons">
+            <button className="btn primary" onClick={() => navigate('/buscar')}>🔍 Explorar Campañas</button>
+            <button className="btn secondary" onClick={() => navigate('/recaudar-fondos')}>💡 Iniciar una Recaudación</button>
           </div>
         </div>
 
-        <div className="presentacion-buttons">
-          <button className="btn primary" onClick={() => navigate('/buscar')}>Explorar Campañas</button>
-          <button className="btn secondary" onClick={() => navigate('/recaudar-fondos')}>Iniciar Recaudación</button>
+        {/* 🔹 Imagen Representativa */}
+        <div className="presentacion-image">
+          <img src="/donar.png" alt="Donar" className="donar-img"/>
         </div>
       </div>
     </div>

@@ -1,63 +1,92 @@
+/* Contenedor principal con diseño uniforme y elegante */
 .donar-container {
     max-width: 600px;
     margin: auto;
     text-align: center;
-    padding: 20px;
+    padding: 30px;
+    background: #ffffff;
+    border-radius: 15px;
+    box-shadow: 0px 6px 20px rgba(0, 0, 0, 0.1);
+    border: 1px solid #e0e0e0;
 }
 
 .donar-title {
-    font-size: 2rem;
+    font-size: 2.4rem;
     color: #2c3e50;
-    margin-bottom: 10px;
+    margin-bottom: 15px;
+    font-weight: bold;
+    letter-spacing: 1px;
 }
 
 .donar-description {
-    font-size: 1.2rem;
+    font-size: 1.3rem;
     color: #555;
-    margin-bottom: 20px;
+    margin-bottom: 25px;
+    line-height: 1.6;
 }
 
 .donar-message {
-    font-size: 1rem;
-    color: green;
+    font-size: 1.1rem;
+    color: #27ae60;
     font-weight: bold;
-    margin-bottom: 15px;
+    margin-bottom: 20px;
 }
 
 .donar-form input, .donar-form select {
     width: 100%;
-    padding: 10px;
+    padding: 12px;
     margin-bottom: 15px;
-    border-radius: 5px;
-    border: 1px solid #ccc;
+    border-radius: 10px;
+    border: 2px solid #ddd;
     font-size: 1rem;
+    transition: all 0.3s ease-in-out;
+    background: #f9f9f9;
+}
+
+.donar-form input:focus, .donar-form select:focus {
+    border-color: #3498db;
+    outline: none;
+    box-shadow: 0px 0px 10px rgba(52, 152, 219, 0.3);
+    background: #ffffff;
 }
 
 .donar-button {
-    background: #3498db;
+    background: linear-gradient(135deg, #3498db, #6dd5fa);
     color: white;
-    padding: 10px;
+    padding: 14px;
     border: none;
-    border-radius: 5px;
+    border-radius: 25px;
     cursor: pointer;
-    margin-top: 10px;
+    margin-top: 15px;
     width: 100%;
+    font-size: 1.2rem;
+    font-weight: bold;
+    transition: background 0.3s, transform 0.2s, box-shadow 0.3s;
+    box-shadow: 0px 4px 10px rgba(52, 152, 219, 0.4);
 }
 
 .donar-button:hover {
-    background: #2980b9;
+    background: linear-gradient(135deg, #2980b9, #6dd5fa);
+    transform: scale(1.08);
+    box-shadow: 0px 6px 15px rgba(52, 152, 219, 0.5);
 }
 
 .donar-categorias {
     display: flex;
     justify-content: center;
     gap: 15px;
-    margin-top: 20px;
+    margin-top: 25px;
+    flex-wrap: wrap;
 }
 
 .donar-button img {
     width: 50px;
     height: 50px;
     object-fit: cover;
-    border-radius: 5px;
+    border-radius: 10px;
+    transition: transform 0.3s ease-in-out;
+}
+
+.donar-button img:hover {
+    transform: scale(1.1);
 }

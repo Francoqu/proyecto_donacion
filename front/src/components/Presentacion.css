@@ -1,19 +1,43 @@
+/* Contenedor principal de la sección de presentación */
 .presentacion-container {
     width: 100%;
     height: 80vh;
-    background: linear-gradient(135deg, #3498db, #2ecc71);
     display: flex;
     align-items: center;
     justify-content: center;
-    text-align: center;
-    color: white;
+    text-align: left;
+    color: #2c3e50;
+    padding: 20px;
 }
 
 .presentacion-content {
-    background: rgba(0, 0, 0, 0.6);
-    padding: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: rgba(255, 255, 255, 0.9);
+    padding: 30px;
+    border-radius: 12px;
+    max-width: 900px;
+    box-shadow: 0px 6px 20px rgba(0, 0, 0, 0.1);
+    width: 100%;
+}
+
+.presentacion-text {
+    flex: 1;
+    padding-right: 20px;
+}
+
+.presentacion-image {
+    flex: 0.5;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.presentacion-image img {
+    width: 80%;
+    max-width: 250px;
     border-radius: 10px;
-    max-width: 700px;
 }
 
 /* 📌 Sección de estadísticas */
@@ -21,50 +45,56 @@
     display: flex;
     justify-content: space-around;
     margin: 20px 0;
+    gap: 20px;
 }
 
 .stat-box {
-    background: rgba(255, 255, 255, 0.2);
+    background: #ffffff;
     padding: 15px;
-    border-radius: 5px;
+    border-radius: 10px;
     text-align: center;
+    box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
 }
 
 .stat-box h3 {
-    font-size: 2rem;
+    font-size: 1.8rem;
     margin: 0;
+    color: #2c3e50;
 }
 
 .stat-box p {
     font-size: 1rem;
     margin: 5px 0 0;
+    color: #555;
 }
 
 /* Botones */
 .presentacion-buttons {
     display: flex;
-    justify-content: center;
+    justify-content: flex-start;
     gap: 15px;
     margin-top: 20px;
 }
 
 .btn {
-    padding: 12px 25px;
-    font-size: 1.2rem;
+    padding: 10px 20px;
+    font-size: 1rem;
     border: none;
-    border-radius: 5px;
+    border-radius: 8px;
     cursor: pointer;
     font-weight: bold;
-    transition: 0.3s;
+    transition: background 0.3s, transform 0.2s, box-shadow 0.3s;
+    box-shadow: 0px 3px 8px rgba(0, 0, 0, 0.1);
 }
 
 .btn.primary {
-    background-color: #ffffff;
-    color: #2c3e50;
+    background-color: #3498db;
+    color: white;
 }
 
 .btn.primary:hover {
-    background-color: #ecf0f1;
+    background-color: #2980b9;
+    transform: scale(1.05);
 }
 
 .btn.secondary {
@@ -74,17 +104,32 @@
 
 .btn.secondary:hover {
     background-color: #f39c12;
+    transform: scale(1.05);
 }
 
 /* Responsividad */
 @media (max-width: 768px) {
     .presentacion-container {
-        height: 70vh;
+        height: auto;
+        padding: 20px;
+    }
+    .presentacion-content {
+        flex-direction: column;
+        text-align: center;
+        align-items: center;
+    }
+    .presentacion-text {
+        padding-right: 0;
+    }
+    .presentacion-buttons {
+        justify-content: center;
     }
     .stats-container {
         flex-direction: column;
+        align-items: center;
     }
     .stat-box {
+        width: 80%;
         margin-bottom: 10px;
     }
 }

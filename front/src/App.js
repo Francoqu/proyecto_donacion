@@ -52,7 +52,7 @@ const App = () => {
             ) : (
               <>
                 <li><Link to="/iniciar-sesion">Iniciar sesión</Link></li>
-                <li><Link to="/registro">Registrarse</Link></li>
+                
               </>
             )}
           </ul>

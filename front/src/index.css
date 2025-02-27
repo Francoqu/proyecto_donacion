@@ -1,124 +1,204 @@
-/* Logo principal */
-.logo img {
-  width: 50px;
-  height: auto;
-}
-
-/* Íconos de navegación */
-.icon {
-  width: 20px;
-  height: 20px;
-}
-
-/* 🔥 Fondo sólido sin imágenes */
-body {
+/* Reset general */
+* {
   margin: 0;
-  font-family: 'Playfair Display', serif;
-  background: #f8f9fa; /* 🔹 Fondo gris claro */
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Playfair Display', serif; /* 🔹 Se mantiene la misma fuente en toda la web */
+  color: black !important; /* 🔹 Todo el texto en negro */
+}
+
+/* 🔥 Fondo cálido */
+body {
+  background: url('../public/ciudad.webp') no-repeat center center fixed;
+  background-size: cover; /* 🔹 Asegura que la imagen cubra toda la pantalla */
   min-height: 100vh;
+  display: flex;
+  flex-direction: column;
 }
 
-/* 🔥 Quitar el efecto de desenfoque en el fondo */
-.main-content {
-  background: #ffffff; /* 🔹 Fondo blanco */
-  padding: 2rem;
-  border-radius: 10px;
-  box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.1); /* 🔹 Sombra ligera */
-}
-
-/* Barra de navegación */
+/* 📌 Encabezado con degradado */
 header {
-  background: #2c3e50; /* 🔹 Color sólido en la barra de navegación */
-  color: white;
-  padding: 10px 20px;
+  background: linear-gradient(to right, #ffffff, #6ce0fd); /* 🔥 Degradado azul pastel */
+  padding: 18px 40px;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2);
+  width: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1000;
+  box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.2);
 }
 
-.navbar {
-  display: flex;
-  align-items: center;
-  gap: 20px;
+/* 🔹 Logo */
+.logo img {
+  width: 65px;
+  height: auto;
 }
 
+/* 🔹 Navegación */
 .navbar ul {
   list-style-type: none;
-  margin: 0;
-  padding: 0;
   display: flex;
-  gap: 20px;
-  align-items: center;
-}
-
-.navbar ul li {
-  display: flex;
-  align-items: center;
-  gap: 10px;
+  gap: 25px;
 }
 
 .navbar ul li a {
-  color: white;
   text-decoration: none;
-  font-size: 16px;
+  font-size: 17px;
   font-weight: bold;
   transition: color 0.3s, transform 0.2s ease;
 }
 
 .navbar ul li a:hover {
-  color: #f64118; /* 🔹 Efecto hover */
-  transform: scale(1.05);
+  color: black; /* 🔹 Mantiene el color negro en hover */
+  transform: scale(1.08);
 }
 
-/* Botón de llamada a la acción */
+/* 🎯 Botón de acción */
 .cta {
-  background-color: #3498db; /* 🔹 Azul llamativo */
-  color: white;
+  background: black; /* 🔹 Color de fondo negro */
+  color: white; /* 🔹 Texto en blanco */
   border: none;
-  padding: 10px 20px;
+  padding: 12px 25px;
   cursor: pointer;
-  font-size: 16px;
-  border-radius: 25px;
-  box-shadow: 0px 4px 10px rgba(52, 152, 219, 0.5);
-  transition: background-color 0.3s ease, transform 0.2s ease;
+  font-size: 18px;
+  font-weight: bold;
+  border-radius: 50px;
+  box-shadow: 0px 5px 12px rgba(0, 0, 0, 0.2);
+  transition: background-color 0.3s ease, transform 0.3s ease;
 }
 
 .cta:hover {
-  background-color: #2980b9; /* 🔹 Azul más oscuro */
-  transform: scale(1.1);
+  background: #6ce0fd; /* 🔹 Azul pastel en hover */
+  color: black;
+  transform: scale(1.12);
 }
 
-/* Sección principal */
+/* 📌 Ajuste del contenido para que no quede oculto */
+.main-content {
+  flex: 1;
+  padding: 120px 2rem 50px;
+}
+
+/* 🎯 Sección principal (Hero) */
 .hero {
   text-align: center;
-  margin: 50px auto;
-  padding: 50px 20px;
-  background: #ffffff;
-  border-radius: 15px;
-  box-shadow: 0px 6px 15px rgba(0, 0, 0, 0.1);
-  max-width: 800px;
+  margin: 60px auto;
+  padding: 80px 40px;
+  background: white;
+  border-radius: 20px;
+  box-shadow: 0px 10px 25px rgba(0, 0, 0, 0.1);
+  max-width: 900px;
 }
 
 .hero h1 {
-  font-size: 2.5rem;
-  color: #2c3e50;
+  font-size: 3rem;
   margin-bottom: 20px;
 }
 
 .hero p {
-  font-size: 1.2rem;
-  color: #555;
+  font-size: 1.5rem;
   margin-bottom: 20px;
 }
 
-/* Pie de página */
-footer {
+/* 🔍 Estilos refinados para la búsqueda */
+.buscar-container {
   text-align: center;
-  padding: 10px 0;
-  background: #2c3e50;
+  padding: 35px;
+  background: #ffffff;
+  border-radius: 20px;
+  box-shadow: 0px 7px 22px rgba(0, 0, 0, 0.12);
+  margin: 40px auto;
+  max-width: 850px;
+}
+
+.buscar-title {
+  font-size: 2.4rem;
+  font-weight: bold;
+  margin-bottom: 25px;
+}
+
+.buscar-input {
+  width: 90%;
+  padding: 16px;
+  margin: 20px 0;
+  border: 2px solid black;
+  border-radius: 15px;
+  font-size: 1.3rem;
+  transition: border-color 0.3s ease;
+}
+
+.buscar-input:focus {
+  border-color: black;
+  outline: none;
+}
+
+/* 🎯 Botones de categoría */
+.categoria-filtros button {
+  margin: 10px;
+  padding: 14px 20px;
+  cursor: pointer;
+  border: 2px solid black;
+  border-radius: 12px;
+  background-color: black; /* 🔹 Fondo negro */
   color: white;
-  margin-top: 30px;
-  font-size: 14px;
-  box-shadow: 0px -4px 6px rgba(0, 0, 0, 0.2);
+  font-size: 1.1rem;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.categoria-filtros button:hover {
+  background-color: #6ce0fd;
+  color: black;
+  transform: scale(1.1);
+}
+
+/* 🎯 Tarjetas de campaña */
+.campañas-list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 30px;
+  padding: 40px;
+}
+
+.campaña-card {
+  width: 300px;
+  border: 2px solid black;
+  border-radius: 18px;
+  padding: 25px;
+  background: white;
+  box-shadow: 0px 8px 22px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.campaña-card:hover {
+  transform: scale(1.08);
+  box-shadow: 0px 10px 28px rgba(0, 0, 0, 0.15);
+}
+
+/* 📌 Pie de página */
+footer {
+  background: linear-gradient(to right, #ffffff, #6ce0fd); /* 🔹 Degradado azul pastel */
+  text-align: center;
+  padding: 20px 0;
+  width: 100%;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  box-shadow: 0px -5px 10px rgba(0, 0, 0, 0.2);
+  font-size: 16px;
+}
+
+/* 📌 Asegurar que el contenido no sea ocultado por el pie de página */
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.main-content {
+  flex: 1;
+  padding-bottom: 100px; /* Evita que el footer cubra el contenido */
 }

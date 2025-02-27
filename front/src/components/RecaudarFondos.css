@@ -1,49 +1,198 @@
+/* 🔥 Contenedor Principal ULTRA GRANDE */
 .contenedor {
-  max-width: 600px;
-  margin: auto;
+  max-width: 1600px; /* 🔹 Mucho más grande */
+  margin: 150px auto;
   text-align: center;
-  padding: 20px;
+  padding: 120px;
+  background: white;
+  border-radius: 50px;
+  box-shadow: 0px 40px 100px rgba(0, 0, 0, 0.6);
+  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+  animation: fadeInUp 1s ease-in-out;
 }
 
+/* 🔥 Efecto al pasar el mouse */
+.contenedor:hover {
+  transform: scale(1.05);
+  box-shadow: 0px 50px 120px rgba(0, 0, 0, 0.8);
+}
+
+/* 📌 Título Principal - EXTRAGRANDE */
 .titulo {
-  font-size: 2rem;
-  color: #2c3e50;
-  margin-bottom: 10px;
-}
-
-.subtitulo {
-  font-size: 1.2rem;
-  color: #555;
-  margin-bottom: 20px;
-}
-
-.mensaje {
-  font-size: 1rem;
-  color: green;
+  font-size: 10rem; /* 🔹 3 veces más grande */
+  color: #1f3c88;
+  margin-bottom: 80px;
   font-weight: bold;
-  margin-bottom: 15px;
+  text-transform: uppercase;
+  letter-spacing: 10px;
+  text-shadow: 6px 6px 30px rgba(0, 0, 0, 0.5);
+  animation: neonGlow 1.5s infinite alternate;
 }
 
-.formulario input, .formulario select, .formulario textarea {
+/* 📌 Subtítulo ULTRA GRANDE */
+.subtitulo {
+  font-size: 5rem;
+  color: #444;
+  margin-bottom: 80px;
+  line-height: 1.8;
+  font-weight: 800;
+}
+
+/* 📌 Mensaje de Éxito con Efectos */
+.mensaje {
+  font-size: 4rem;
+  color: #27ae60;
+  font-weight: bold;
+  margin-bottom: 80px;
+  animation: fadeIn 1s ease-in-out, bounce 2s infinite alternate;
+}
+
+/* 🎯 Campos del Formulario SUPER GRANDES */
+.formulario input,
+.formulario select,
+.formulario textarea {
   width: 100%;
-  padding: 10px;
-  margin-bottom: 15px;
-  border-radius: 5px;
-  border: 1px solid #ccc;
-  font-size: 1rem;
+  padding: 50px;
+  margin-bottom: 50px;
+  border-radius: 40px;
+  border: 6px solid #ddd;
+  font-size: 3.5rem;
+  transition: all 0.3s ease-in-out;
+  background: #f9f9f9;
+  box-shadow: inset 0px 8px 20px rgba(0, 0, 0, 0.3);
 }
 
+/* 🎯 Efecto al Enfocar un Campo */
+.formulario input:focus,
+.formulario select:focus,
+.formulario textarea:focus {
+  border-color: #1f3c88;
+  outline: none;
+  box-shadow: 0px 0px 40px rgba(50, 60, 136, 0.8);
+  background: #ffffff;
+}
+
+/* 🎯 Botón con EFECTOS IMPACTANTES */
 .boton {
-  background: #3498db;
+  background: linear-gradient(135deg, #1f3c88, #6dd5fa);
   color: white;
-  padding: 10px;
+  padding: 50px;
   border: none;
-  border-radius: 5px;
+  border-radius: 50px;
   cursor: pointer;
-  margin-top: 10px;
+  margin-top: 50px;
   width: 100%;
+  font-size: 4.5rem;
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 5px;
+  transition: background 0.3s, transform 0.2s, box-shadow 0.3s;
+  box-shadow: 0px 20px 50px rgba(31, 60, 136, 1);
+  animation: pulse 1.5s infinite alternate;
 }
 
+/* 🎯 Efecto al Pasar el Mouse en el Botón */
 .boton:hover {
-  background: #2980b9;
+  background: linear-gradient(135deg, #152a67, #6dd5fa);
+  transform: scale(1.15);
+  box-shadow: 0px 25px 60px rgba(31, 60, 136, 1);
+}
+
+/* 🎯 Animaciones y Efectos */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(100px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes neonGlow {
+  from {
+    text-shadow: 0px 0px 20px #1f3c88, 0px 0px 50px #6dd5fa;
+  }
+  to {
+    text-shadow: 0px 0px 40px #1f3c88, 0px 0px 80px #6dd5fa;
+  }
+}
+
+@keyframes bounce {
+  from {
+    transform: translateY(0);
+  }
+  to {
+    transform: translateY(-20px);
+  }
+}
+
+@keyframes pulse {
+  from {
+    box-shadow: 0px 0px 40px rgba(31, 60, 136, 0.7);
+  }
+  to {
+    box-shadow: 0px 0px 70px rgba(31, 60, 136, 1);
+  }
+}
+
+/* 📌 Responsividad: Ajustes para Pantallas Medianas */
+@media (max-width: 1200px) {
+  .contenedor {
+    max-width: 90%;
+    padding: 100px;
+  }
+
+  .titulo {
+    font-size: 8rem;
+  }
+
+  .subtitulo {
+    font-size: 4rem;
+  }
+
+  .mensaje {
+    font-size: 3.5rem;
+  }
+
+  .formulario input,
+  .formulario select,
+  .formulario textarea {
+    font-size: 3rem;
+  }
+
+  .boton {
+    font-size: 4rem;
+  }
+}
+
+/* 📌 Responsividad: Ajustes para Pantallas Pequeñas */
+@media (max-width: 800px) {
+  .contenedor {
+    max-width: 95%;
+    padding: 80px;
+  }
+
+  .titulo {
+    font-size: 6rem;
+  }
+
+  .subtitulo {
+    font-size: 3rem;
+  }
+
+  .mensaje {
+    font-size: 3rem;
+  }
+
+  .formulario input,
+  .formulario select,
+  .formulario textarea {
+    font-size: 2.5rem;
+  }
+
+  .boton {
+    font-size: 3.5rem;
+  }
 }
