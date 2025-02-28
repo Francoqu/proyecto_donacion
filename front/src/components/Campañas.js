@@ -19,11 +19,11 @@ const Campañas = () => {
       <div className="campañas-grid">
         {campañas.map((campaña) => (
           <div key={campaña.id} className="campaña-card">
-            {/* ✅ Nombre de la campaña grande arriba */}
-            <h2 className="campaña-nombre">{campaña.nombre}</h2>
-
             {/* ✅ Descripción de la campaña */}
             <p className="campaña-descripcion">{campaña.descripcion}</p>
+
+            {/* ✅ Nombre de la campaña (Encima del botón "Ver Campaña") */}
+            <h2 className="campaña-nombre">{campaña.nombre}</h2>
 
             {/* ✅ Botón "Ver Campaña" */}
             <Link to={`/campana/${campaña.id}`} className="ver-button">

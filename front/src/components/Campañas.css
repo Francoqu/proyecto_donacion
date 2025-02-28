@@ -34,20 +34,19 @@
   transform: scale(1.05);
 }
 
-/* 📌 Nombre de la Campaña arriba */
-.campaña-nombre {
-  font-size: 1.8rem;
-  font-weight: bold;
-  margin-bottom: 5px;
-  text-transform: uppercase; /* ✅ Hace que el nombre se vea más destacado */
-  color: #323232;
-}
-
 /* 📌 Descripción */
 .campaña-descripcion {
   font-size: 1.1rem;
-  margin-bottom: 15px;
+  margin-bottom: 10px;
   color: #505050;
+}
+
+/* 📌 Nombre de la Campaña (Encima del botón "Ver Campaña") */
+.campaña-nombre {
+  font-size: 1.5rem;
+  font-weight: bold;
+  margin-bottom: 10px;
+  color: #323232;
 }
 
 /* 📌 Botón "Ver Campaña" */
