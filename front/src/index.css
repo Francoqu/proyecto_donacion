@@ -1,24 +1,25 @@
-/* Reset general */
+
+
+/* 🔹 Reset general */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: 'Playfair Display', serif; /* 🔹 Se mantiene la misma fuente en toda la web */
-  color: black !important; /* 🔹 Todo el texto en negro */
+  font-family: 'Playfair Display', serif;
+  color: #323232 !important; /* Texto en gris oscuro */
 }
 
-/* 🔥 Fondo cálido */
+/* 🔥 Fondo beige */
 body {
-  background: url('../public/ciudad.webp') no-repeat center center fixed;
-  background-size: cover; /* 🔹 Asegura que la imagen cubra toda la pantalla */
+  background: #DDD0C8; /* Beige */
   min-height: 100vh;
   display: flex;
   flex-direction: column;
 }
 
-/* 📌 Encabezado con degradado */
+/* 📌 Encabezado */
 header {
-  background: linear-gradient(to right, #ffffff, #6ce0fd); /* 🔥 Degradado azul pastel */
+  background: #DDD0C8; /* Beige */
   padding: 18px 40px;
   display: flex;
   justify-content: space-between;
@@ -52,14 +53,14 @@ header {
 }
 
 .navbar ul li a:hover {
-  color: black; /* 🔹 Mantiene el color negro en hover */
+  color: #505050; /* Gris más oscuro */
   transform: scale(1.08);
 }
 
 /* 🎯 Botón de acción */
 .cta {
-  background: black; /* 🔹 Color de fondo negro */
-  color: white; /* 🔹 Texto en blanco */
+  background: #323232; /* Gris oscuro */
+  color: white;
   border: none;
   padding: 12px 25px;
   cursor: pointer;
@@ -71,18 +72,17 @@ header {
 }
 
 .cta:hover {
-  background: #6ce0fd; /* 🔹 Azul pastel en hover */
-  color: black;
+  background: #505050;
   transform: scale(1.12);
 }
 
-/* 📌 Ajuste del contenido para que no quede oculto */
+/* 📌 Ajuste del contenido */
 .main-content {
   flex: 1;
   padding: 120px 2rem 50px;
 }
 
-/* 🎯 Sección principal (Hero) */
+/* 🎯 Sección principal */
 .hero {
   text-align: center;
   margin: 60px auto;
@@ -103,91 +103,15 @@ header {
   margin-bottom: 20px;
 }
 
-/* 🔍 Estilos refinados para la búsqueda */
-.buscar-container {
-  text-align: center;
-  padding: 35px;
-  background: #ffffff;
-  border-radius: 20px;
-  box-shadow: 0px 7px 22px rgba(0, 0, 0, 0.12);
-  margin: 40px auto;
-  max-width: 850px;
-}
-
-.buscar-title {
-  font-size: 2.4rem;
-  font-weight: bold;
-  margin-bottom: 25px;
-}
-
-.buscar-input {
-  width: 90%;
-  padding: 16px;
-  margin: 20px 0;
-  border: 2px solid black;
-  border-radius: 15px;
-  font-size: 1.3rem;
-  transition: border-color 0.3s ease;
-}
-
-.buscar-input:focus {
-  border-color: black;
-  outline: none;
-}
-
-/* 🎯 Botones de categoría */
-.categoria-filtros button {
-  margin: 10px;
-  padding: 14px 20px;
-  cursor: pointer;
-  border: 2px solid black;
-  border-radius: 12px;
-  background-color: black; /* 🔹 Fondo negro */
-  color: white;
-  font-size: 1.1rem;
-  transition: background-color 0.3s ease, transform 0.2s ease;
-}
-
-.categoria-filtros button:hover {
-  background-color: #6ce0fd;
-  color: black;
-  transform: scale(1.1);
-}
-
-/* 🎯 Tarjetas de campaña */
-.campañas-list {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 30px;
-  padding: 40px;
-}
-
-.campaña-card {
-  width: 300px;
-  border: 2px solid black;
-  border-radius: 18px;
-  padding: 25px;
-  background: white;
-  box-shadow: 0px 8px 22px rgba(0, 0, 0, 0.1);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.campaña-card:hover {
-  transform: scale(1.08);
-  box-shadow: 0px 10px 28px rgba(0, 0, 0, 0.15);
-}
-
 /* 📌 Pie de página */
 footer {
-  background: linear-gradient(to right, #ffffff, #6ce0fd); /* 🔹 Degradado azul pastel */
+  background: #DDD0C8; /* Beige */
   text-align: center;
   padding: 20px 0;
   width: 100%;
   position: fixed;
   bottom: 0;
   left: 0;
-  box-shadow: 0px -5px 10px rgba(0, 0, 0, 0.2);
   font-size: 16px;
 }
 

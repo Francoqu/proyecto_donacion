@@ -13,6 +13,10 @@ const db = require('./config/db'); // Conexión a MySQL
 
 const app = express();
 
+const postRoutes = require('./routes/postRoutes');
+app.use('/api/posts', postRoutes);
+
+
 // 📌 Middlewares
 app.use(express.json());
 app.use(cors());
@@ -47,7 +51,7 @@ const PORT = process.env.PORT || 5000;
 
 db.getConnection((err, connection) => {
     if (err) {
-        console.error("❌ Error de conexión a MySQL:", err);
+        console.error("❌ Error de conexión a MySQL:", err.message);
         process.exit(1);
     } else {
         console.log("✅ Conectado a la base de datos MySQL");

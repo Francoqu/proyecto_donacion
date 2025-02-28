@@ -1,106 +1,87 @@
-/* 🔥 Contenedor Principal */
+/* 🔹 Estilos generales */
 .acerca-container {
+  background-color: #DDD0C8; /* Fondo beige */
+  color: #323232; /* Texto gris oscuro */
+  font-family: 'Playfair Display', serif;
   text-align: center;
-  padding: 80px 20px;
-  max-width: 1200px;
-  margin: auto;
-  background: white;
-  border-radius: 20px;
-  box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.15);
+  padding: 50px 20px;
+  min-height: 100vh;
 }
 
-/* 📌 Título Principal */
+/* 🔹 Título Principal */
 .acerca-title {
-  font-size: 50px;
-  font-weight: bold;
-  color: #1f3c88;
+  font-size: 2.8rem;
   margin-bottom: 20px;
-  text-transform: uppercase;
+  font-weight: bold;
 }
 
-/* 📌 Descripción Principal */
+/* 🔹 Descripción */
 .acerca-description {
-  font-size: 22px;
+  font-size: 1.4rem;
   max-width: 800px;
-  margin: 0 auto 40px;
+  margin: 0 auto 40px auto;
   line-height: 1.6;
-  font-weight: 500;
 }
 
-/* 🔹 Sección Historia */
+/* 🔹 Sección: Nuestra Historia */
 .acerca-historia {
-  background: #f4f6fc;
-  padding: 50px;
+  background: #ffffff;
+  padding: 40px;
   border-radius: 15px;
-  margin: 40px auto;
+  box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.1);
   max-width: 900px;
-  box-shadow: 0px 6px 20px rgba(0, 0, 0, 0.1);
+  margin: 0 auto 50px;
 }
 
 .historia-title {
-  font-size: 30px;
-  color: #1f3c88;
-  font-weight: bold;
+  font-size: 2.2rem;
+  color: #323232;
+  margin-bottom: 15px;
 }
 
 .historia-text {
-  font-size: 18px;
-  color: #444;
+  font-size: 1.2rem;
   line-height: 1.6;
 }
 
-/* 🔹 Sección de Impacto */
+/* 🔹 Sección de impacto */
 .acerca-impacto {
   display: flex;
   justify-content: center;
   gap: 30px;
   flex-wrap: wrap;
-  margin-top: 40px;
+  margin-bottom: 50px;
 }
 
 .impacto-card {
   background: white;
   border-radius: 15px;
-  box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.1);
-  overflow: hidden;
+  padding: 20px;
+  width: 300px;
   text-align: center;
-  width: 350px;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.impacto-card:hover {
-  transform: scale(1.05);
-  box-shadow: 0px 12px 30px rgba(0, 0, 0, 0.2);
+  box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.1);
 }
 
 .impacto-img {
   width: 100%;
-  height: 220px;
-  object-fit: cover;
+  border-radius: 15px;
+  margin-bottom: 15px;
 }
 
-.impacto-card h3 {
-  font-size: 24px;
-  color: #1f3c88;
-  margin: 15px 0;
-  font-weight: bold;
-}
-
-.impacto-card p {
-  font-size: 18px;
-  padding: 0 20px 20px;
-  line-height: 1.5;
-}
-
-/* 🔹 Sección Nuestro Equipo */
+/* 🔹 Sección: Nuestro Equipo */
 .acerca-equipo {
-  margin-top: 60px;
+  background: #ffffff;
+  padding: 40px;
+  border-radius: 15px;
+  box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.1);
+  max-width: 900px;
+  margin: 0 auto 50px;
 }
 
 .equipo-title {
-  font-size: 30px;
-  color: #1f3c88;
-  font-weight: bold;
+  font-size: 2.2rem;
+  color: #323232;
+  margin-bottom: 15px;
 }
 
 .equipo-container {
@@ -108,44 +89,29 @@
   justify-content: center;
   gap: 30px;
   flex-wrap: wrap;
-  margin-top: 30px;
 }
 
 .equipo-card {
   background: white;
-  padding: 20px;
   border-radius: 15px;
-  text-align: center;
-  box-shadow: 0px 6px 15px rgba(0, 0, 0, 0.1);
+  padding: 20px;
   width: 250px;
+  text-align: center;
+  box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.1);
 }
 
 .equipo-img {
   width: 100%;
-  height: 180px;
-  object-fit: cover;
-  border-radius: 10px;
+  border-radius: 15px;
+  margin-bottom: 15px;
 }
 
-.equipo-card h4 {
-  font-size: 22px;
-  margin-top: 10px;
-  font-weight: bold;
-  color: #1f3c88;
-}
-
-.equipo-card p {
-  font-size: 16px;
-  color: #666;
-}
-
-/* 📌 Pie de Página */
+/* 🔹 Pie de página */
 .acerca-footer {
-  margin-top: 50px;
-  font-size: 20px;
-  font-weight: bold;
-  color: #1f3c88;
+  margin-top: 40px;
   padding: 20px;
-  background: #f0f4f8;
-  border-radius: 10px;
+  background: #ffffff;
+  color: #323232;
+  border-top: 2px solid #323232;
+  font-size: 1.2rem;
 }

@@ -7,7 +7,10 @@ import AcercaDe from './components/AcercaDe';
 import IniciarSesion from './components/IniciarSesion';
 import Registrar from './components/Registrar';
 import Perfil from './components/Perfil';
-import Presentacion from './components/Presentacion';
+import Blog from './components/Blog';
+import Campañas from './components/Campañas';
+import CampañaDetalle from './components/CampañaDetalle';
+import LandingPage from './components/LandingPage'; // ✅ Ahora LandingPage es la página de inicio
 import './App.css';
 
 const App = () => {
@@ -39,6 +42,8 @@ const App = () => {
             <li><Link to="/buscar">Buscar</Link></li>
             <li><Link to="/donar">Donar</Link></li>
             <li><Link to="/recaudar-fondos">Recaudar fondos</Link></li>
+            <li><Link to="/campanas">Campañas</Link></li>
+            <li><Link to="/blog">Blog</Link></li> {/* ✅ Blog agregado al menú */}
             <li><Link to="/acerca-de">Acerca de</Link></li>
             {user ? (
               <>
@@ -50,10 +55,7 @@ const App = () => {
                 </li>
               </>
             ) : (
-              <>
-                <li><Link to="/iniciar-sesion">Iniciar sesión</Link></li>
-                
-              </>
+              <li><Link to="/iniciar-sesion">Iniciar sesión</Link></li>
             )}
           </ul>
         </nav>
@@ -61,11 +63,14 @@ const App = () => {
 
       <main className="main-content">
         <Routes>
-          <Route path="/" element={<Presentacion />} />
+          <Route path="/" element={<LandingPage />} /> {/* ✅ Ahora LandingPage es la página de inicio */}
           <Route path="/buscar" element={<Buscar />} />
           <Route path="/donar" element={<Donar />} />
           <Route path="/recaudar-fondos" element={<RecaudarFondos />} />
+          <Route path="/campanas" element={<Campañas />} />
+          <Route path="/campana/:id" element={<CampañaDetalle />} />
           <Route path="/acerca-de" element={<AcercaDe />} />
+          <Route path="/blog" element={<Blog />} />
           <Route path="/iniciar-sesion" element={<IniciarSesion setUser={setUser} />} />
           <Route path="/registro" element={<Registrar />} />
           <Route path="/perfil/:userId" element={<Perfil />} />

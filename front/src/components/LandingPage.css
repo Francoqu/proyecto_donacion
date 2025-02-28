@@ -1,0 +1,115 @@
+/* 📌 Contenedor Principal */
+.landing-container {
+    background: #DDD0C8; /* ✅ Fondo beige */
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 40px;
+  }
+  
+  /* 📌 Contenido Principal */
+  .landing-content {
+    max-width: 900px;
+  }
+  
+  /* 📌 Título */
+  .landing-title {
+    font-size: 3.5rem;
+    font-weight: bold;
+    color: #323232;
+    margin-bottom: 10px;
+  }
+  
+  /* 📌 Subtítulo */
+  .landing-subtitle {
+    font-size: 1.5rem;
+    margin-bottom: 30px;
+    color: #505050;
+  }
+  
+  /* 📌 Botones */
+  .landing-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    margin-bottom: 40px;
+  }
+  
+  .landing-btn {
+    text-decoration: none;
+    font-size: 1.3rem;
+    font-weight: bold;
+    padding: 15px 30px;
+    border-radius: 50px;
+    transition: all 0.3s ease;
+  }
+  
+  .primary {
+    background: #323232;
+    color: white;
+  }
+  
+  .primary:hover {
+    background: #505050;
+  }
+  
+  .secondary {
+    border: 2px solid #323232;
+    color: #323232;
+  }
+  
+  .secondary:hover {
+    background: #323232;
+    color: white;
+  }
+  
+  /* 📌 Sección de Campañas */
+  .campañas-container {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    margin-top: 40px;
+  }
+  
+  .campaña-card {
+    background: white;
+    padding: 20px;
+    border-radius: 15px;
+    width: 250px;
+    box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.1);
+    text-align: center;
+  }
+  
+  /* 📌 Todas las imágenes del mismo tamaño */
+  .campaña-img {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+    border-radius: 10px;
+  }
+  
+  .campaña-card h3 {
+    font-size: 1.2rem;
+    margin: 10px 0;
+  }
+  
+  .campaña-card p {
+    font-size: 1rem;
+    color: #505050;
+  }
+  
+  .ver-mas {
+    display: inline-block;
+    margin-top: 10px;
+    text-decoration: none;
+    font-weight: bold;
+    color: #323232;
+    transition: color 0.3s;
+  }
+  
+  .ver-mas:hover {
+    color: #505050;
+  }
+  

@@ -1,198 +1,92 @@
-/* 🔥 Contenedor Principal ULTRA GRANDE */
+/* 🔹 Reset General */
+* {
+  font-family: 'Comic Sans MS', cursive, sans-serif; /* ✅ Fuente Comic Sans */
+  color: #323232; /* ✅ Texto gris oscuro */
+  box-sizing: border-box;
+}
+
+/* 📌 Contenedor principal */
 .contenedor {
-  max-width: 1600px; /* 🔹 Mucho más grande */
-  margin: 150px auto;
+  background: #DDD0C8; /* ✅ Fondo beige */
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 50px 20px;
+}
+
+/* 📌 Formulario de campañas */
+.formulario {
+  width: 100%;
+  max-width: 600px;
+  padding: 30px;
+  border-radius: 12px;
+  box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
   text-align: center;
-  padding: 120px;
-  background: white;
-  border-radius: 50px;
-  box-shadow: 0px 40px 100px rgba(0, 0, 0, 0.6);
-  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
-  animation: fadeInUp 1s ease-in-out;
 }
 
-/* 🔥 Efecto al pasar el mouse */
-.contenedor:hover {
-  transform: scale(1.05);
-  box-shadow: 0px 50px 120px rgba(0, 0, 0, 0.8);
-}
-
-/* 📌 Título Principal - EXTRAGRANDE */
+/* 📌 Título */
 .titulo {
-  font-size: 10rem; /* 🔹 3 veces más grande */
-  color: #1f3c88;
-  margin-bottom: 80px;
+  font-size: 2.5rem;
   font-weight: bold;
-  text-transform: uppercase;
-  letter-spacing: 10px;
-  text-shadow: 6px 6px 30px rgba(0, 0, 0, 0.5);
-  animation: neonGlow 1.5s infinite alternate;
+  margin-bottom: 10px;
 }
 
-/* 📌 Subtítulo ULTRA GRANDE */
+/* 📌 Subtítulo */
 .subtitulo {
-  font-size: 5rem;
-  color: #444;
-  margin-bottom: 80px;
-  line-height: 1.8;
-  font-weight: 800;
+  font-size: 1.3rem;
+  margin-bottom: 20px;
 }
 
-/* 📌 Mensaje de Éxito con Efectos */
+/* 📌 Mensajes */
 .mensaje {
-  font-size: 4rem;
-  color: #27ae60;
+  font-size: 1.2rem;
   font-weight: bold;
-  margin-bottom: 80px;
-  animation: fadeIn 1s ease-in-out, bounce 2s infinite alternate;
+  color: #d9534f;
+  margin-bottom: 15px;
 }
 
-/* 🎯 Campos del Formulario SUPER GRANDES */
-.formulario input,
-.formulario select,
-.formulario textarea {
+/* 📌 Campos de entrada */
+.campo {
   width: 100%;
-  padding: 50px;
-  margin-bottom: 50px;
-  border-radius: 40px;
-  border: 6px solid #ddd;
-  font-size: 3.5rem;
-  transition: all 0.3s ease-in-out;
-  background: #f9f9f9;
-  box-shadow: inset 0px 8px 20px rgba(0, 0, 0, 0.3);
+  padding: 12px;
+  margin: 10px 0;
+  border: 2px solid #323232;
+  border-radius: 8px;
+  font-size: 1.2rem;
+  background: transparent;
 }
 
-/* 🎯 Efecto al Enfocar un Campo */
-.formulario input:focus,
-.formulario select:focus,
-.formulario textarea:focus {
-  border-color: #1f3c88;
+.campo:focus {
+  border-color: #555;
   outline: none;
-  box-shadow: 0px 0px 40px rgba(50, 60, 136, 0.8);
-  background: #ffffff;
 }
 
-/* 🎯 Botón con EFECTOS IMPACTANTES */
+/* 📌 Fechas */
+.fechas {
+  display: flex;
+  gap: 15px;
+}
+
+.fechas .campo {
+  flex: 1;
+}
+
+/* 📌 Botón */
 .boton {
-  background: linear-gradient(135deg, #1f3c88, #6dd5fa);
-  color: white;
-  padding: 50px;
-  border: none;
-  border-radius: 50px;
-  cursor: pointer;
-  margin-top: 50px;
   width: 100%;
-  font-size: 4.5rem;
+  padding: 14px;
+  font-size: 1.2rem;
   font-weight: bold;
-  text-transform: uppercase;
-  letter-spacing: 5px;
-  transition: background 0.3s, transform 0.2s, box-shadow 0.3s;
-  box-shadow: 0px 20px 50px rgba(31, 60, 136, 1);
-  animation: pulse 1.5s infinite alternate;
+  background: #323232;
+  color: white;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: background 0.3s ease, transform 0.2s ease;
 }
 
-/* 🎯 Efecto al Pasar el Mouse en el Botón */
 .boton:hover {
-  background: linear-gradient(135deg, #152a67, #6dd5fa);
-  transform: scale(1.15);
-  box-shadow: 0px 25px 60px rgba(31, 60, 136, 1);
-}
-
-/* 🎯 Animaciones y Efectos */
-@keyframes fadeInUp {
-  from {
-    opacity: 0;
-    transform: translateY(100px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-@keyframes neonGlow {
-  from {
-    text-shadow: 0px 0px 20px #1f3c88, 0px 0px 50px #6dd5fa;
-  }
-  to {
-    text-shadow: 0px 0px 40px #1f3c88, 0px 0px 80px #6dd5fa;
-  }
-}
-
-@keyframes bounce {
-  from {
-    transform: translateY(0);
-  }
-  to {
-    transform: translateY(-20px);
-  }
-}
-
-@keyframes pulse {
-  from {
-    box-shadow: 0px 0px 40px rgba(31, 60, 136, 0.7);
-  }
-  to {
-    box-shadow: 0px 0px 70px rgba(31, 60, 136, 1);
-  }
-}
-
-/* 📌 Responsividad: Ajustes para Pantallas Medianas */
-@media (max-width: 1200px) {
-  .contenedor {
-    max-width: 90%;
-    padding: 100px;
-  }
-
-  .titulo {
-    font-size: 8rem;
-  }
-
-  .subtitulo {
-    font-size: 4rem;
-  }
-
-  .mensaje {
-    font-size: 3.5rem;
-  }
-
-  .formulario input,
-  .formulario select,
-  .formulario textarea {
-    font-size: 3rem;
-  }
-
-  .boton {
-    font-size: 4rem;
-  }
-}
-
-/* 📌 Responsividad: Ajustes para Pantallas Pequeñas */
-@media (max-width: 800px) {
-  .contenedor {
-    max-width: 95%;
-    padding: 80px;
-  }
-
-  .titulo {
-    font-size: 6rem;
-  }
-
-  .subtitulo {
-    font-size: 3rem;
-  }
-
-  .mensaje {
-    font-size: 3rem;
-  }
-
-  .formulario input,
-  .formulario select,
-  .formulario textarea {
-    font-size: 2.5rem;
-  }
-
-  .boton {
-    font-size: 3.5rem;
-  }
+  background: #555;
+  transform: scale(1.05);
 }

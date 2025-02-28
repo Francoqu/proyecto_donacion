@@ -1,74 +1,104 @@
-/* Contenedor principal de la página de registro */
+/* 🔹 Reset General */
+* {
+  font-family: 'Comic Sans MS', cursive, sans-serif;
+  color: #323232;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/* 📌 Contenedor Principal */
 .registrar-container {
+  background: #DDD0C8; /* ✅ Fondo beige */
+  min-height: 100vh;
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 100vh;
-  background-color: #ffffff; /* Fondo completamente blanco */
+  padding: 20px;
 }
 
-/* Formulario de registro */
+/* 📌 Formulario */
 .registrar-form {
-  background: white;
-  padding: 2.5rem;
-  border-radius: 12px;
-  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
   width: 100%;
   max-width: 400px;
   text-align: center;
-  border: 1px solid #e0e0e0;
+  padding: 20px;
 }
 
+/* 📌 Título y subtítulo */
 .registrar-title {
-  font-size: 2rem;
-  margin-bottom: 1.2rem;
-  color: #2c3e50;
+  font-size: 2.5rem;
   font-weight: bold;
+  margin-bottom: 5px;
 }
 
-/* Campos de entrada */
-input {
-  width: 100%;
-  padding: 12px;
-  margin: 12px 0;
-  border: 2px solid #ddd;
-  border-radius: 8px;
-  font-size: 1rem;
-  background-color: #f9f9f9;
-  transition: all 0.3s ease-in-out;
+.registrar-subtitle {
+  font-size: 1.3rem;
+  margin-bottom: 20px;
 }
 
-input:focus {
-  border-color: #007bff;
-  outline: none;
-  box-shadow: 0px 0px 10px rgba(0, 123, 255, 0.3);
-  background: #ffffff;
-}
-
-/* Botón de registro */
-button {
-  width: 100%;
-  padding: 12px;
-  background: linear-gradient(135deg, #007bff, #6dd5fa);
-  color: white;
-  border: none;
-  border-radius: 25px;
-  cursor: pointer;
+/* 📌 Mensajes de error y éxito */
+.registrar-error {
   font-size: 1.1rem;
   font-weight: bold;
-  transition: background 0.3s, transform 0.2s, box-shadow 0.3s;
-  box-shadow: 0px 4px 12px rgba(0, 123, 255, 0.4);
+  color: #d9534f;
+  margin-bottom: 15px;
 }
 
-button:hover {
-  background: linear-gradient(135deg, #0056b3, #6dd5fa);
+.registrar-success {
+  font-size: 1.1rem;
+  font-weight: bold;
+  color: #5cb85c;
+  margin-bottom: 15px;
+}
+
+/* 📌 Campos de entrada sin cuadros */
+.registrar-form input {
+  width: 100%;
+  padding: 12px;
+  margin: 10px 0;
+  border: none;
+  border-bottom: 2px solid #323232;
+  background: transparent;
+  font-size: 1.2rem;
+}
+
+.registrar-form input:focus {
+  border-color: #555;
+  outline: none;
+}
+
+/* 📌 Botón sin bordes */
+.registrar-button {
+  width: 100%;
+  padding: 14px;
+  font-size: 1.2rem;
+  font-weight: bold;
+  background: #323232;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background 0.3s ease, transform 0.2s ease;
+}
+
+.registrar-button:hover {
+  background: #555;
   transform: scale(1.05);
-  box-shadow: 0px 6px 18px rgba(0, 123, 255, 0.5);
 }
 
-/* Mensaje de error */
-.registrar-error {
-  color: red;
-  font-size: 14px;
-  margin-top: 10px;
+/* 📌 Enlace de inicio de sesión */
+.registrar-login-text {
+  font-size: 1rem;
+  margin-top: 15px;
+}
+
+.registrar-login-link {
+  color: #323232;
+  font-weight: bold;
+  text-decoration: none;
+}
+
+.registrar-login-link:hover {
+  text-decoration: underline;
 }

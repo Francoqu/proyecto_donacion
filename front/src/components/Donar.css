@@ -1,92 +1,84 @@
-/* Contenedor principal con diseño uniforme y elegante */
+/* 🔹 Reset General */
+* {
+  font-family: 'Comic Sans MS', cursive, sans-serif;
+  color: #323232;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/* 📌 Contenedor Principal */
 .donar-container {
-    max-width: 600px;
-    margin: auto;
-    text-align: center;
-    padding: 30px;
-    background: #ffffff;
-    border-radius: 15px;
-    box-shadow: 0px 6px 20px rgba(0, 0, 0, 0.1);
-    border: 1px solid #e0e0e0;
+  background: #DDD0C8; /* ✅ Fondo beige */
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
 }
 
+/* 📌 Formulario */
+.donar-form {
+  width: 100%;
+  max-width: 400px;
+  text-align: center;
+  padding: 20px;
+}
+
+/* 📌 Título y subtítulo */
 .donar-title {
-    font-size: 2.4rem;
-    color: #2c3e50;
-    margin-bottom: 15px;
-    font-weight: bold;
-    letter-spacing: 1px;
+  font-size: 2.5rem;
+  font-weight: bold;
+  margin-bottom: 5px;
 }
 
-.donar-description {
-    font-size: 1.3rem;
-    color: #555;
-    margin-bottom: 25px;
-    line-height: 1.6;
+.donar-subtitle {
+  font-size: 1.3rem;
+  margin-bottom: 20px;
 }
 
+/* 📌 Mensajes de error y éxito */
 .donar-message {
-    font-size: 1.1rem;
-    color: #27ae60;
-    font-weight: bold;
-    margin-bottom: 20px;
+  font-size: 1.1rem;
+  font-weight: bold;
+  margin-bottom: 15px;
 }
 
-.donar-form input, .donar-form select {
-    width: 100%;
-    padding: 12px;
-    margin-bottom: 15px;
-    border-radius: 10px;
-    border: 2px solid #ddd;
-    font-size: 1rem;
-    transition: all 0.3s ease-in-out;
-    background: #f9f9f9;
+/* 📌 Campos de entrada sin cuadros */
+.donar-form input,
+.donar-form textarea,
+.donar-form select {
+  width: 100%;
+  padding: 12px;
+  margin: 10px 0;
+  border: none;
+  border-bottom: 2px solid #323232;
+  background: transparent;
+  font-size: 1.2rem;
 }
 
-.donar-form input:focus, .donar-form select:focus {
-    border-color: #3498db;
-    outline: none;
-    box-shadow: 0px 0px 10px rgba(52, 152, 219, 0.3);
-    background: #ffffff;
+.donar-form input:focus,
+.donar-form textarea:focus,
+.donar-form select:focus {
+  border-color: #555;
+  outline: none;
 }
 
+/* 📌 Botón sin bordes */
 .donar-button {
-    background: linear-gradient(135deg, #3498db, #6dd5fa);
-    color: white;
-    padding: 14px;
-    border: none;
-    border-radius: 25px;
-    cursor: pointer;
-    margin-top: 15px;
-    width: 100%;
-    font-size: 1.2rem;
-    font-weight: bold;
-    transition: background 0.3s, transform 0.2s, box-shadow 0.3s;
-    box-shadow: 0px 4px 10px rgba(52, 152, 219, 0.4);
+  width: 100%;
+  padding: 14px;
+  font-size: 1.2rem;
+  font-weight: bold;
+  background: #323232;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background 0.3s ease, transform 0.2s ease;
 }
 
 .donar-button:hover {
-    background: linear-gradient(135deg, #2980b9, #6dd5fa);
-    transform: scale(1.08);
-    box-shadow: 0px 6px 15px rgba(52, 152, 219, 0.5);
-}
-
-.donar-categorias {
-    display: flex;
-    justify-content: center;
-    gap: 15px;
-    margin-top: 25px;
-    flex-wrap: wrap;
-}
-
-.donar-button img {
-    width: 50px;
-    height: 50px;
-    object-fit: cover;
-    border-radius: 10px;
-    transition: transform 0.3s ease-in-out;
-}
-
-.donar-button img:hover {
-    transform: scale(1.1);
+  background: #555;
+  transform: scale(1.05);
 }

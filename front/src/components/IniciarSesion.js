@@ -3,28 +3,40 @@ import { useNavigate } from 'react-router-dom';
 import './IniciarSesion.css';
 
 const IniciarSesion = ({ setUser }) => {
-  const [email, setEmail] = useState('');
-  const [password, setPassword] = useState('');
+  const [formData, setFormData] = useState({
+    email: '',
+    password: '',
+  });
+
   const [error, setError] = useState('');
+  const [success, setSuccess] = useState('');
   const navigate = useNavigate();
 
-  const handleLogin = async (e) => {
+  const handleChange = (e) => {
+    setFormData({ ...formData, [e.target.name]: e.target.value });
+  };
+
+  const handleSubmit = async (e) => {
     e.preventDefault();
     setError('');
+    setSuccess('');
 
     try {
       const res = await fetch('http://localhost:5000/api/users/login', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ email, password }),
+        body: JSON.stringify(formData),
       });
 
       const data = await res.json();
 
       if (res.ok) {
-        localStorage.setItem('user', JSON.stringify(data)); // Guardar usuario en localStorage
-        setUser(data); // Actualizar estado global de usuario
-        navigate(`/perfil/${data.id}`);
+        setSuccess('✅ Inicio de sesión exitoso. Redirigiendo...');
+        localStorage.setItem('user', JSON.stringify(data));
+        setUser(data);
+        setTimeout(() => {
+          navigate(`/perfil/${data.id}`);
+        }, 2000);
       } else {
         setError(data.error || '❌ Credenciales incorrectas.');
       }
@@ -34,42 +46,42 @@ const IniciarSesion = ({ setUser }) => {
   };
 
   return (
-    <div className="login-container">
-      <div className="login-box">
-        <h1 className="login-title">🔐 Iniciar Sesión</h1>
-        <p className="login-description">Ingresa tus credenciales para acceder.</p>
+    <div className="iniciar-container">
+      <form className="iniciar-form" onSubmit={handleSubmit}>
+        <h1 className="iniciar-title">Iniciar Sesión</h1>
 
-        {error && <p className="login-error">{error}</p>}
+        {error && <p className="iniciar-error">{error}</p>}
+        {success && <p className="iniciar-success">{success}</p>}
 
-        <form onSubmit={handleLogin}>
-          <input
-            type="email"
-            placeholder="📧 Correo Electrónico"
-            className="login-input"
-            value={email}
-            onChange={(e) => setEmail(e.target.value)}
-            required
-          />
-          <input
-            type="password"
-            placeholder="🔑 Contraseña"
-            className="login-input"
-            value={password}
-            onChange={(e) => setPassword(e.target.value)}
-            required
-          />
-          <button type="submit" className="login-button">
-            🚀 Iniciar Sesión
-          </button>
-        </form>
+        <input
+          type="email"
+          name="email"
+          placeholder="Correo Electrónico"
+          className="iniciar-input"
+          value={formData.email}
+          onChange={handleChange}
+          required
+        />
 
-        <p className="login-register-text">
+        <input
+          type="password"
+          name="password"
+          placeholder="Contraseña"
+          className="iniciar-input"
+          value={formData.password}
+          onChange={handleChange}
+          required
+        />
+
+        <button type="submit" className="iniciar-button">Iniciar Sesión</button>
+
+        <p className="iniciar-register-text">
           ¿No tienes cuenta?{' '}
-          <a href="/registro" className="login-register-link">
+          <a href="/registro" className="iniciar-register-link">
             Regístrate aquí
           </a>
         </p>
-      </div>
+      </form>
     </div>
   );
 };

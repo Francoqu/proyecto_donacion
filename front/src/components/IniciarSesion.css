@@ -1,106 +1,99 @@
-/* Reset general */
+/* 🔹 Reset General */
 * {
+  font-family: 'Comic Sans MS', cursive, sans-serif;
+  color: #323232;
+  box-sizing: border-box;
   margin: 0;
   padding: 0;
-  box-sizing: border-box;
-  font-family: 'Playfair Display', serif; /* 🔹 Se mantiene la misma fuente */
-  color: black; /* 🔹 Todo el texto en negro */
 }
 
-
-
-/* 🎯 Caja del formulario de inicio de sesión */
-.login-box {
-  background: white;
-  padding: 50px;
-  border-radius: 50px;
-  box-shadow: 0px 12px 30px rgba(0, 0, 0, 0.2);
-  text-align: center;
-  width: 650px;
-  max-width: 100%;
-  border: 2px solid black;
+/* 📌 Contenedor Principal */
+.iniciar-container {
+  background: #DDD0C8; /* ✅ Fondo beige */
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
-/* 🎯 Título */
-.login-title {
-  font-size: 32px;
-  font-weight: bold;
-  margin-bottom: 20px;
-  letter-spacing: 1px;
-}
-
-/* 🎯 Descripción */
-.login-description {
-  font-size: 18px;
-  margin-bottom: 25px;
-  line-height: 1.5;
-}
-
-/* 🎯 Inputs */
-.login-input {
+/* 📌 Formulario */
+.iniciar-form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 15px;
   width: 100%;
-  padding: 16px;
-  margin: 15px 0;
-  border: 2px solid rgb(0, 0, 0);
-  border-radius: 12px;
-  font-size: 18px;
-  background-color: #f9f9f9;
-  transition: all 0.3s ease-in-out;
+  max-width: 400px;
 }
 
-.login-input:focus {
-  border-color: #6ce0fd;
+/* 📌 Título */
+.iniciar-title {
+  font-size: 2.5rem;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+/* 📌 Mensajes */
+.iniciar-error, .iniciar-success {
+  font-size: 1.2rem;
+  font-weight: bold;
+  margin-bottom: 15px;
+}
+
+.iniciar-error {
+  color: #d9534f;
+}
+
+.iniciar-success {
+  color: #28a745;
+}
+
+/* 📌 Campos de entrada */
+.iniciar-input {
+  width: 100%;
+  padding: 12px;
+  font-size: 1.2rem;
+  border: 2px solid #323232;
+  background: transparent;
+  border-radius: 5px;
+}
+
+.iniciar-input:focus {
+  border-color: #505050;
   outline: none;
-  box-shadow: 0px 0px 12px rgba(108, 224, 253, 0.5);
-  background: #ffffff;
 }
 
-/* 🎯 Botón de inicio de sesión */
-.login-button {
+/* 📌 Botón */
+.iniciar-button {
   width: 100%;
-  padding: 16px;
-  background: black;
+  padding: 14px;
+  font-size: 1.2rem;
+  font-weight: bold;
+  background: #323232;
   color: white;
-  font-size: 20px;
   border: none;
-  border-radius: 30px;
+  border-radius: 5px;
   cursor: pointer;
-  transition: background 0.3s, transform 0.2s, box-shadow 0.3s;
-  box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.4);
+  transition: background 0.3s ease, transform 0.2s ease;
+}
+
+.iniciar-button:hover {
+  background: #505050;
+  transform: scale(1.05);
+}
+
+/* 📌 Registro */
+.iniciar-register-text {
+  font-size: 1rem;
+  margin-top: 15px;
+}
+
+.iniciar-register-link {
+  color: #323232;
   font-weight: bold;
-}
-
-.login-button:hover {
-  background: #6ce0fd;
-  color: black;
-  transform: scale(1.08);
-  box-shadow: 0px 10px 25px rgba(108, 224, 253, 0.5);
-}
-
-/* 🎯 Mensaje de error */
-.login-error {
-  color: #ff4d4d;
-  font-weight: bold;
-  margin-bottom: 14px;
-}
-
-/* 🎯 Texto de registro */
-.login-register-text {
-  margin-top: 20px;
-  font-size: 17px;
-}
-
-/* 🎯 Link de registro */
-.login-register-link {
-  color: black;
   text-decoration: none;
-  font-weight: bold;
-  transition: color 0.3s;
-  border-bottom: 2px solid transparent;
 }
 
-.login-register-link:hover {
-  text-decoration: none;
-  color: #6ce0fd;
-  border-bottom: 2px solid #6ce0fd;
+.iniciar-register-link:hover {
+  text-decoration: underline;
 }

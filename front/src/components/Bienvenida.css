@@ -1,84 +1,72 @@
-/* Contenedor principal */
+/* 🔹 Estilos generales */
 .hero {
-    width: 100%;
-    height: 80vh;
-    background: linear-gradient(135deg, #3498db, #2ecc71); /* Degradado en lugar de imagen */
+    background-color: #DDD0C8; /* Fondo beige */
+    color: #323232; /* Texto gris oscuro */
+    font-family: 'Playfair Display', serif;
     display: flex;
     align-items: center;
     justify-content: center;
+    height: 100vh;
     text-align: center;
-    color: white;
-}
-
-/* Contenido de la sección */
-.hero-content {
-    background: rgba(0, 0, 0, 0.6);
     padding: 40px;
-    border-radius: 10px;
+  }
+  
+  /* 🔹 Contenedor del contenido */
+  .hero-content {
+    background: white;
+    padding: 40px;
+    border-radius: 15px;
+    box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.1);
     max-width: 600px;
-}
-
-/* Título */
-.welcome-title {
-    font-size: 2.8rem;
+    width: 100%;
+  }
+  
+  /* 🔹 Títulos */
+  .welcome-title {
+    font-size: 2.5rem;
     font-weight: bold;
     margin-bottom: 15px;
-}
-
-/* Subtítulo */
-.welcome-subtitle {
-    font-size: 1.4rem;
-    margin-bottom: 20px;
-}
-
-/* Botones de acción */
-.welcome-actions {
+    color: #323232;
+  }
+  
+  .welcome-subtitle {
+    font-size: 1.2rem;
+    margin-bottom: 25px;
+    color: #555;
+  }
+  
+  /* 🔹 Botones */
+  .welcome-actions {
     display: flex;
     justify-content: center;
-    gap: 15px;
-    margin-top: 20px;
-}
-
-.cta {
+    gap: 20px;
+  }
+  
+  .cta {
+    background: #323232;
+    color: white;
     padding: 12px 25px;
-    font-size: 1.2rem;
     border: none;
-    border-radius: 5px;
     cursor: pointer;
-    background-color: #ffffff;
-    color: #2c3e50;
+    font-size: 1rem;
     font-weight: bold;
-    transition: 0.3s;
-}
-
-.cta:hover {
-    background-color: #ecf0f1;
-}
-
-.cta.secondary {
-    background-color: #f1c40f;
-    color: black;
-}
-
-.cta.secondary:hover {
-    background-color: #f39c12;
-}
-
-/* Responsividad */
-@media (max-width: 768px) {
-    .hero {
-        height: 60vh;
-    }
-
-    .welcome-title {
-        font-size: 2.2rem;
-    }
-
-    .welcome-subtitle {
-        font-size: 1.1rem;
-    }
-
-    .welcome-actions {
-        flex-direction: column;
-    }
-}
+    border-radius: 8px;
+    transition: background 0.3s ease, transform 0.2s ease;
+  }
+  
+  .cta:hover {
+    background: #555;
+    transform: scale(1.05);
+  }
+  
+  .cta.secondary {
+    background: transparent;
+    color: #323232;
+    border: 2px solid #323232;
+  }
+  
+  .cta.secondary:hover {
+    background: #323232;
+    color: white;
+  }
+  

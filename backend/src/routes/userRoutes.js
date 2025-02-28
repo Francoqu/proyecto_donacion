@@ -11,9 +11,12 @@ router.post('/login', async (req, res) => {
     }
 
     try {
-        // 🔍 Buscar usuario en la base de datos
+        // 🔍 Buscar usuario y contraseña en la base de datos
         const [user] = await db.promise().query(
-            "SELECT * FROM users WHERE email = ? AND password = ?",
+            `SELECT u.iduser, u.first_name, u.last_name, u.email, u.phone, u.id_card, a.username, a.password 
+             FROM users u
+             JOIN authentication a ON u.iduser = a.users_iduser
+             WHERE u.email = ? AND a.password = ?`,
             [email, password]
         );
 
@@ -21,7 +24,7 @@ router.post('/login', async (req, res) => {
             return res.status(401).json({ error: "❌ Credenciales incorrectas." });
         }
 
-        // ✅ Enviar datos del usuario
+        // ✅ Enviar datos del usuario sin la contraseña
         const userData = {
             id: user[0].iduser,
             first_name: user[0].first_name,
@@ -45,7 +48,10 @@ router.get('/:id', async (req, res) => {
 
     try {
         const [user] = await db.promise().query(
-            "SELECT iduser, first_name, last_name, email, phone, id_card, username FROM users WHERE iduser = ?",
+            `SELECT u.iduser, u.first_name, u.last_name, u.email, u.phone, u.id_card, a.username 
+             FROM users u
+             JOIN authentication a ON u.iduser = a.users_iduser
+             WHERE u.iduser = ?`,
             [id]
         );
 
